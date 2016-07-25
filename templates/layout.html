@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+    <title>mr.hainaux.net</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+</head>
+
+<body>
+    <div role="navigation">
+        <ul id="navbar_menu" class="nav nav-pills">
+            {% for entry in navbar_entries %}
+                {% if active == entry %}
+                    <li role="presentation" class="active"><a href="/{{ entry }}/">{{ entry }}</a></li>
+                {% else %}
+                    <li role="presentation"><a href="/{{ entry }}/">{{ entry }}</a></li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+    <div role="navigation">
+        <ul id="left_menu" class="nav nav-pills nav-stacked">
+            {% for entry in leftmenu_entries %}
+            <li role="presentation"><a href="#">{{ entry }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div>
+        <p>{{ content }}<br></p>
+    </div>
+    <div>
+        <p>Test: {{ test_var }}<br></p>
+    </div>
+</body>
+</html>
