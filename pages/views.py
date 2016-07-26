@@ -31,7 +31,7 @@ def build(request, category='', theme=''):
     # todo: ? check the theme does exist
     theme_slug = theme
     active_theme = ''
-    thumbnails = []
+    thumbnails_contents = []
     if theme_slug != '':
         # todo: check a result at least is returned (otherwise return a 404)
         theme_object = Theme.objects\
@@ -49,5 +49,5 @@ def build(request, category='', theme=''):
                                'category_content': category_object.text,
                                'active_theme': active_theme,
                                'thumbnails_contents': thumbnails_contents,
-                               'test_var': thumbnails,
+                               'test_var': thumbnails_contents,
                                })
