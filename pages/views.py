@@ -49,5 +49,5 @@ def build(request, category='', theme=''):
                                'category_content': category_object.text,
                                'active_theme': active_theme,
                                'thumbnails': thumbnails,
-                               'test_var': navbar_links,
+                               'test_var': thumbnails,
                                })
