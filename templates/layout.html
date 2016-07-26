@@ -26,9 +26,17 @@
             {% endfor %}
         </ul>
     </div>
-    <div>
-        <p>{{ content|safe }}<br></p>
-    </div>
+    {% if active_theme == '' %}
+        <div>
+            <p>{{ category_content|safe }}<br></p>
+        </div>
+    {% else %}
+        {% for t in thumbnails %}
+            <div>
+                <p>{{ t.content|safe }}<br></p>
+            </div>
+        {% endfor %}
+    {% endif %}
     <div>
         <p>Test: {{ test_var }}<br></p>
     </div>

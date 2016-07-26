@@ -30,12 +30,14 @@ def build(request, category='', theme=''):
 
     # todo: ? check the theme does exist
     theme_slug = theme
+    active_theme = ''
     thumbnails = []
     if theme_slug != '':
         # todo: check a result at least is returned (otherwise return a 404)
         theme_object = Theme.objects\
             .filter(slug__exact=theme_slug)\
             .filter(category_id=category_object.id)[0]
+        active_theme = theme_object.name
         thumbnails = [o.content
                       for o in Thumbnail.objects.filter(
                           theme_id=theme_object.id).order_by('order')]
@@ -44,8 +46,8 @@ def build(request, category='', theme=''):
                               {'navbar_infos': navbar_infos,
                                'leftmenu_infos': leftmenu_infos,
                                'active_category': category_object.name,
-                               'content': category_object.text,
-                               'active_theme': theme_slug,
+                               'category_content': category_object.text,
+                               'active_theme': active_theme,
                                'thumbnails': thumbnails,
                                'test_var': navbar_links,
                                })
