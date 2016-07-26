@@ -18,7 +18,7 @@ def build(request, category='', theme=''):
     navbar_entries = [o.name for o in Category.objects.all().order_by('order')]
     navbar_infos = zip(navbar_links, navbar_entries)
 
-    leftmenu_links = [o.category.slug + '/' + o.slug
+    leftmenu_links = ['/' + o.category.slug + '/' + o.slug
                       for o in Theme.objects.filter(
                           category_id=category_object.id).order_by('order')]
     leftmenu_entries = [o.name
