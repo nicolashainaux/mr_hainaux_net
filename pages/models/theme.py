@@ -2,6 +2,7 @@ from django.db import models
 
 from .category import Category
 
+
 class Theme(models.Model):
     order = models.PositiveSmallIntegerField()
     name = models.CharField(max_length=100)
@@ -10,4 +11,3 @@ class Theme(models.Model):
 
     def __str__(self):
         return self.category.name + ': ' + self.name
-
