@@ -5,12 +5,12 @@ from pages.models import Category, Theme
 
 
 def home(request):
-    return category(request, category='accueil')
+    return build(request, category='accueil')
 
 
-def category(request, **kwargs):
-    # todo: check the category does exist
-    cat = kwargs.get('category', '')
+def build(request, category='', theme=''):
+    # todo: check the category does exist; remove using cat?
+    cat = category
     # todo: check a result at least is returned (otherwise return a 404)
     active_category = Category.objects.filter(slug__exact=cat)[0]
     navbar_links = [o.slug for o in Category.objects.all().order_by('order')]
@@ -30,7 +30,3 @@ def category(request, **kwargs):
                                'content': active_category.text,
                                'test_var': navbar_links,
                                })
-
-
-def theme(request, **kwargs):
-    pass
