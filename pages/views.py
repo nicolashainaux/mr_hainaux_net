@@ -43,7 +43,7 @@ def build(request, category='', theme=''):
     return render_to_response('layout.html',
                               {'navbar_infos': navbar_infos,
                                'leftmenu_infos': leftmenu_infos,
-                               'active_category': category_slug,
+                               'active_category': category_object.name,
                                'content': category_object.text,
                                'active_theme': theme_slug,
                                'thumbnails': thumbnails,
