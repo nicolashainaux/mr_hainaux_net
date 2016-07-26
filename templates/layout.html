@@ -10,7 +10,7 @@
 <body>
     <div role="navigation">
         <ul id="navbar_menu" class="nav nav-pills">
-            {% for link, entry in navbar_links, navbar_entries %}
+            {% for link, entry in (navbar_links, navbar_entries) %}
                 {% if active == entry %}
                     <li role="presentation" class="active"><a href="/{{ link }}/">{{ entry }}</a></li>
                 {% else %}
