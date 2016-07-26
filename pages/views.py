@@ -10,8 +10,8 @@ def home(request):
 
 def category(request, **kwargs):
     # todo: check the category does exist
-    cat = kwargs.get('category', None)
-    # todo: check a result at least is returned
+    cat = kwargs.get('category', '')
+    # todo: check a result at least is returned (otherwise return a 404)
     active_category = Category.objects.filter(slug__exact=cat)[0]
     navbar_links = [o.slug for o in Category.objects.all().order_by('order')]
     navbar_entries = [o.name for o in Category.objects.all().order_by('order')]
