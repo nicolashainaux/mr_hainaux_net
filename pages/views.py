@@ -38,9 +38,9 @@ def build(request, category='', theme=''):
             .filter(slug__exact=theme_slug)\
             .filter(category_id=category_object.id)[0]
         active_theme = theme_object.name
-        thumbnails = [o.content
-                      for o in Thumbnail.objects.filter(
-                          theme_id=theme_object.id).order_by('order')]
+        thumbnails_contents = [o.content
+                               for o in Thumbnail.objects.filter(
+                                   theme_id=theme_object.id).order_by('order')]
 
     return render_to_response('layout.html',
                               {'navbar_infos': navbar_infos,
@@ -48,6 +48,6 @@ def build(request, category='', theme=''):
                                'active_category': category_object.name,
                                'category_content': category_object.text,
                                'active_theme': active_theme,
-                               'thumbnails': thumbnails,
+                               'thumbnails_contents': thumbnails_contents,
                                'test_var': thumbnails,
                                })

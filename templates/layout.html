@@ -31,9 +31,9 @@
             <p>{{ category_content|safe }}<br></p>
         </div>
     {% else %}
-        {% for t in thumbnails %}
+        {% for content in thumbnails_contents %}
             <div>
-                <p>{{ t.content|safe }}<br></p>
+                <p>{{ content|safe }}<br></p>
             </div>
         {% endfor %}
     {% endif %}
