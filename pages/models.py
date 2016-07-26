@@ -1,5 +1,4 @@
 from django.db import models
-from django.utils.text import slugify
 
 
 class Category(models.Model):
@@ -7,7 +6,7 @@ class Category(models.Model):
         verbose_name_plural = "categories"
     order = models.PositiveSmallIntegerField()
     name = models.CharField(max_length=100)
-    slug = models.SlugField(max_length=100, default=slugify(name))
+    slug = models.SlugField(max_length=100, default='unset')
     text = models.TextField()
 
     def __str__(self):
@@ -17,7 +16,7 @@ class Category(models.Model):
 class Theme(models.Model):
     order = models.PositiveSmallIntegerField()
     name = models.CharField(max_length=100)
-    slug = models.SlugField(max_length=100, default=slugify(name))
+    slug = models.SlugField(max_length=100, default='unset')
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
 
     def __str__(self):
