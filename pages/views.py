@@ -14,9 +14,10 @@ def build(request, category='', theme=''):
     # todo: check a result at least is returned (otherwise return a 404)
     category_object = Category.objects.filter(slug__exact=category_slug)[0]
 
-    navbar_links = ['/' + o.slug
+    navbar_links = [o.slug
                     for o in Category.objects.all().order_by('order')]
-    navbar_entries = [o.name for o in Category.objects.all().order_by('order')]
+    navbar_entries = [o.name
+                      for o in Category.objects.all().order_by('order')]
     navbar_infos = zip(navbar_links, navbar_entries)
 
     leftmenu_links = ['/' + o.category.slug + '/' + o.slug
