@@ -21,6 +21,6 @@ from pages import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.home),
-    url(r'^(?P<category>\w+)/$', views.category),
-    url(r'^(?P<category>\w+)/(?P<theme>\w+)/$', views.theme)
+    url(r'^(?P<category>[-\w]+)/$', views.category),
+    url(r'^(?P<category>[-\w]+)/(?P<theme>[-\w]+)/$', views.theme)
 ]
