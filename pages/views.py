@@ -16,12 +16,16 @@ def category(request, **kwargs):
     navbar_links = [o.slug for o in Category.objects.all().order_by('order')]
     navbar_entries = [o.name for o in Category.objects.all().order_by('order')]
     navbar_infos = zip(navbar_links, navbar_entries)
+    leftmenu_links = [o.slug
+                      for o in Theme.objects.filter(
+                          category_id=active_category.id).order_by('order')]
     leftmenu_entries = [o.name
                         for o in Theme.objects.filter(
                             category_id=active_category.id).order_by('order')]
+    leftmenu_infos = zip(leftmenu_links, leftmenu_entries)
     return render_to_response('layout.html',
                               {'navbar_infos': navbar_infos,
-                               'leftmenu_entries': leftmenu_entries,
+                               'leftmenu_infos': leftmenu_infos,
                                'active': cat,
                                'content': active_category.text,
                                'test_var': navbar_links,

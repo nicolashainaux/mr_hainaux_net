@@ -21,8 +21,8 @@
     </div>
     <div role="navigation">
         <ul id="left_menu" class="nav nav-pills nav-stacked">
-            {% for entry in leftmenu_entries %}
-            <li role="presentation"><a href="#">{{ entry }}</a></li>
+            {% for link, entry in leftmenu_infos %}
+                <li role="presentation"><a href="{{ link }}">{{ entry }}</a></li>
             {% endfor %}
         </ul>
     </div>
