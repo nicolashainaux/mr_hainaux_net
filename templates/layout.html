@@ -10,11 +10,11 @@
 <body>
     <div role="navigation">
         <ul id="navbar_menu" class="nav nav-pills">
-            {% for entry in navbar_entries %}
+            {% for link, entry in navbar_infos %}
                 {% if active == entry %}
-                    <li role="presentation" class="active"><a href="/{{ entry }}/">{{ entry }}</a></li>
+                    <li role="presentation" class="active"><a href="/{{ link }}/">{{ entry }}</a></li>
                 {% else %}
-                    <li role="presentation"><a href="/{{ entry }}/">{{ entry }}</a></li>
+                    <li role="presentation"><a href="/{{ link }}/">{{ entry }}</a></li>
                 {% endif %}
             {% endfor %}
         </ul>
