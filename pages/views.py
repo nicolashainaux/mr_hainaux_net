@@ -24,7 +24,7 @@ def category(request, **kwargs):
                                'leftmenu_entries': leftmenu_entries,
                                'active': cat,
                                'content': active_category.text,
-                               'test_var': 'rien à tester',
+                               'test_var': navbar_links,
                                })
 
 
