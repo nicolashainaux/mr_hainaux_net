@@ -22,7 +22,11 @@
     <div role="navigation">
         <ul id="left_menu" class="nav nav-pills nav-stacked">
             {% for link, entry in leftmenu_infos %}
-                <li role="presentation"><a href="{{ link }}">{{ entry }}</a></li>
+                {% if active_theme == entry %}
+                    <li role="presentation" class="active"><a href="{{ link }}">{{ entry }}</a></li>
+                {% else %}
+                    <li role="presentation"><a href="{{ link }}">{{ entry }}</a></li>
+                {% endif %}
             {% endfor %}
         </ul>
     </div>
