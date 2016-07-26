@@ -5,7 +5,7 @@ from pages.models import Category, Theme
 
 
 def home(request):
-    return category(request, category='Accueil')
+    return category(request, category='accueil')
 
 
 def category(request, **kwargs):
