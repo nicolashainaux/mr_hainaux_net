@@ -1,7 +1,9 @@
+import requests
 from django.shortcuts import render_to_response
-# from django.http import HttpResponse
+from django.http import HttpResponse
 
 from pages.models import Category, Theme, Thumbnail
+from tools import get_client_ip
 
 
 def home(request):
@@ -51,3 +53,17 @@ def build(request, category='', theme=''):
                                'thumbnails_contents': thumbnails_contents,
                                'test_var': thumbnails_contents,
                                })
+
+
+def sheet(request, sheetname='', filename=''):
+    r = requests.get('http://127.0.0.1:9999',
+                     params={'sheetname': sheetname,
+                             'ip': get_client_ip(request)})
+    if r.status_code == 200:
+        response = HttpResponse(r.content,
+                                content_type=r.headers['content-type'])
+        response['Content-Disposition'] = \
+            'attachment; filename="' + str(filename) + '.pdf"'
+        return response
+    else:
+        pass
