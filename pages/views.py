@@ -68,5 +68,5 @@ def sheet(request, sheetname='', filename=''):
         return response
     else:
         response = HttpResponse(r.text)
-        response.status_code = 404
+        response.status_code = r.status_code
         return response
