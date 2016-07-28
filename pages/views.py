@@ -3,7 +3,7 @@ from django.shortcuts import render_to_response
 from django.http import HttpResponse
 
 from pages.models import Category, Theme, Thumbnail
-from tools import get_client_ip
+from .tools import get_client_ip
 
 
 def home(request):
