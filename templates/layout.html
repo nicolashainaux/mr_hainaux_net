@@ -32,19 +32,23 @@
             {% endfor %}
         </ul>
     </div>
-    {% if active_theme == '' %}
-        <div>
-            <p>{{ category_content|safe }}<br></p>
-        </div>
-    {% else %}
-        {% for content in thumbnails_contents %}
+    <main>
+        {% if active_theme == '' %}
             <div>
-                <p>{{ content|safe }}<br></p>
+                <p>{{ category_content|safe }}<br></p>
             </div>
-        {% endfor %}
-    {% endif %}
+        {% else %}
+            {% for content in thumbnails_contents %}
+                <div>
+                    <p>{{ content|safe }}<br></p>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </main>
     <div>
         <p>Test: {{ test_var }}<br></p>
     </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="/static/js/main.js"></script>
 </body>
 </html>
