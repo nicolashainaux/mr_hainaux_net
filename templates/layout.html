@@ -5,47 +5,47 @@
     <title>mr.hainaux.net</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="/static/css/base.css"/>
     <link rel="stylesheet" type="text/css" href="/static/css/fonts.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/css/layout.css"/>
 </head>
 
-<body>
-    <div role="navigation">
-        <ul id="navbar_menu" class="nav nav-pills">
-            {% for link, entry in navbar_infos %}
-                {% if active_category == entry %}
-                    <li role="presentation" class="active"><a href="/{{ link }}/">{{ entry }}</a></li>
-                {% else %}
-                    <li role="presentation"><a href="/{{ link }}/">{{ entry }}</a></li>
-                {% endif %}
-            {% endfor %}
-        </ul>
+<body class="container-fluid">
+    <div class="row">
+        <div class="col-md-12 navbar_row" role="navigation">
+            <ul class="nav nav-pills navbar_entries">
+                {% for link, entry in navbar_infos %}
+                    {% if active_category == entry %}
+                        <li role="presentation" class="active navbar_entry"><a href="/{{ link }}/">{{ entry }}</a></li>
+                    {% else %}
+                        <li role="presentation" class="navbar_entry"><a href="/{{ link }}/">{{ entry }}</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
     </div>
-    <div role="navigation">
-        <ul id="left_menu" class="nav nav-pills nav-stacked">
-            {% for link, entry in leftmenu_infos %}
-                {% if active_theme == entry %}
-                    <li role="presentation" class="active"><a href="{{ link }}">{{ entry }}</a></li>
-                {% else %}
-                    <li role="presentation"><a href="{{ link }}">{{ entry }}</a></li>
-                {% endif %}
-            {% endfor %}
-        </ul>
+    <div class="row">
+        <div class="col-md-2 leftmenu_col" role="navigation">
+            <ul class="nav nav-pills nav-stacked">
+                {% for link, entry in leftmenu_infos %}
+                    {% if active_theme == entry %}
+                        <li role="presentation" class="active"><a href="{{ link }}">{{ entry }}</a></li>
+                    {% else %}
+                        <li role="presentation"><a href="{{ link }}">{{ entry }}</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="col-md-10 main">
+            {% if active_theme == '' %}
+                <div class="thumbnail thumbnail-wide">{{ category_content|safe }}</div>
+            {% else %}
+                {% for content in thumbnails_contents %}
+                    <div class="thumbnail">{{ content|safe }}</div>
+                {% endfor %}
+            {% endif %}
+        </div>
     </div>
-    <main>
-        {% if active_theme == '' %}
-            <div>
-                <p>{{ category_content|safe }}<br></p>
-            </div>
-        {% else %}
-            {% for content in thumbnails_contents %}
-                <div>
-                    <p>{{ content|safe }}<br></p>
-                </div>
-            {% endfor %}
-        {% endif %}
-    </main>
-    <div>
+    <div class="debug">
         <p>Test: {{ test_var }}<br></p>
     </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>

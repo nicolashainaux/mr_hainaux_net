@@ -133,3 +133,8 @@
     font-weight: normal;
     font-style: normal;
 }
+
+body {
+    font-family: ubunturegular;
+    font-size: 200%;
+}

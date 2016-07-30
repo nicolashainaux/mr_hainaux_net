@@ -1,0 +1,55 @@
+.navbar_row {
+    /*justify-content: space-between;*/
+    /*margin: 0;*/
+    padding: 0;
+    margin-bottom: 1%;
+    margin-left: 0.28%;
+    display: flex;
+    /*flex-flow: row wrap;*/
+}
+
+.navbar_entries {
+    /*justify-content: space-between;*/
+    margin: 0;
+    padding: 0;
+    margin-left: 16.33%;
+    width: 100%;
+    font-size: 125%;
+}
+
+.navbar_entry {
+    min-width: 16%;
+    text-align: center;
+}
+
+.leftmenu_col {
+    /*margin: 0;*/
+    padding-right: 0.75%;
+    padding-left: 0.75%;
+}
+
+.main {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    width: 81.25%;
+    margin: 0;
+    padding: 0;
+}
+
+.thumbnail {
+    margin: 0;
+    padding: 0;
+    width: 49.5%;
+    font-family: ubuntulight;
+    font-size: 90%;
+    text-align: center;
+}
+
+.thumbnail-wide {
+    width: 100%;
+}
+
+.debug {
+    margin-top: 150px;
+}
