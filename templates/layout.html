@@ -37,10 +37,13 @@
         </div>
         <div class="col-md-10 main">
             {% if active_theme == '' %}
-                <div class="thumbnail thumbnail-wide">{{ category_content|safe }}</div>
+                {{ category_content|safe }}
             {% else %}
                 {% for content in thumbnails_contents %}
-                    <div class="thumbnail">{{ content|safe }}</div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Title</div>
+                        <div class="panel-body">{{ content|safe }}</div>
+                    </div>
                 {% endfor %}
             {% endif %}
         </div>

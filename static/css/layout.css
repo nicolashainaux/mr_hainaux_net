@@ -37,17 +37,16 @@
     padding: 0;
 }
 
-.thumbnail {
+.panel {
     margin: 0;
     padding: 0;
     width: 49.5%;
-    font-family: ubuntulight;
-    font-size: 90%;
     text-align: center;
 }
 
-.thumbnail-wide {
-    width: 100%;
+.panel-body {
+    font-family: ubuntulight;
+    font-size: 90%;
 }
 
 .debug {
