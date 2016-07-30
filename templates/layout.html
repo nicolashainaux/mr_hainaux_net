@@ -16,9 +16,9 @@
                 <ul class="nav nav-pills navbar_entries">
                     {% for link, entry in navbar_infos %}
                         {% if active_category == entry %}
-                            <li role="presentation" class="active navbar_entry"><a href="/{{ link }}/">{{ entry }}</a></li>
+                            <li role="presentation" class="active navbar_entry"><a href="{{ link }}">{{ entry }}</a></li>
                         {% else %}
-                            <li role="presentation" class="navbar_entry"><a href="/{{ link }}/">{{ entry }}</a></li>
+                            <li role="presentation" class="navbar_entry"><a href="{{ link }}">{{ entry }}</a></li>
                         {% endif %}
                     {% endfor %}
                 </ul>

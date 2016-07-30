@@ -31,8 +31,9 @@ def build(request, category='', theme=''):
     else:
         active_object = category_object
 
-    navbar_links = [o.slug
+    navbar_links = ['/' + o.slug + '/'
                     for o in Category.objects.all().order_by('order')]
+    navbar_links[0] = "/"
     navbar_entries = [o.name
                       for o in Category.objects.all().order_by('order')]
     navbar_infos = zip(navbar_links, navbar_entries)
@@ -78,7 +79,7 @@ def build(request, category='', theme=''):
                                'active_theme': active_theme,
                                'thumbnails_contents': thumbnails_contents,
                                'footer_infos': footer_infos,
-                               'test_var': thumbnails_contents,
+                               'test_var': navbar_links,
                                })
 
 
