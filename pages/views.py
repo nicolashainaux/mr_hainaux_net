@@ -60,7 +60,7 @@ def build(request, category='', theme=''):
     # todo: ? check the theme does exist
     theme_slug = theme
     active_theme = ''
-    tiles_contents = []
+    tiles_infos = []
     if theme_slug != '':
         # todo: check a result at least is returned (otherwise return a 404)
         theme_object = Theme.objects\
@@ -70,6 +70,10 @@ def build(request, category='', theme=''):
         tiles_contents = [o.content
                           for o in Tile.objects.filter(
                               theme_id=theme_object.id).order_by('order')]
+        tiles_names = [o.name
+                       for o in Tile.objects.filter(
+                           theme_id=theme_object.id).order_by('order')]
+        tiles_infos = zip(tiles_names, tiles_contents)
 
     return render_to_response('layout.html',
                               {'navbar_infos': navbar_infos,
@@ -77,7 +81,7 @@ def build(request, category='', theme=''):
                                'active_category': active_object.name,
                                'category_content': active_object.text,
                                'active_theme': active_theme,
-                               'tiles_contents': tiles_contents,
+                               'tiles_infos': tiles_infos,
                                'footer_infos': footer_infos,
                                'test_var': navbar_links,
                                })

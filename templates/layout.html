@@ -40,9 +40,9 @@
                 {% if active_theme == '' %}
                     {{ category_content|safe }}
                 {% else %}
-                    {% for content in tiles_contents %}
+                    {% for name, content in tiles_infos %}
                         <div class="panel panel-default">
-                            <div class="panel-heading">Title</div>
+                            <div class="panel-heading">{{ name }}</div>
                             <div class="panel-body">{{ content|safe }}</div>
                         </div>
                     {% endfor %}
