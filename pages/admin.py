@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Category, FooterCategory, Theme, Thumbnail
+from .models import Category, FooterCategory, Theme, Tile
 
 
 class CategoryAdmin(admin.ModelAdmin):
@@ -17,4 +17,4 @@ class ThemeAdmin(admin.ModelAdmin):
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(FooterCategory, FooterCategoryAdmin)
 admin.site.register(Theme, ThemeAdmin)
-admin.site.register(Thumbnail)
+admin.site.register(Tile)

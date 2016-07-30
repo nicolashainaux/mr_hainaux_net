@@ -2,7 +2,7 @@ import requests
 from django.shortcuts import render_to_response
 from django.http import HttpResponse
 
-from pages.models import Category, FooterCategory, Theme, Thumbnail
+from pages.models import Category, FooterCategory, Theme, Tile
 from .tools import get_client_ip
 
 
@@ -60,16 +60,16 @@ def build(request, category='', theme=''):
     # todo: ? check the theme does exist
     theme_slug = theme
     active_theme = ''
-    thumbnails_contents = []
+    tiles_contents = []
     if theme_slug != '':
         # todo: check a result at least is returned (otherwise return a 404)
         theme_object = Theme.objects\
             .filter(slug__exact=theme_slug)\
             .filter(category_id=category_object.id)[0]
         active_theme = theme_object.name
-        thumbnails_contents = [o.content
-                               for o in Thumbnail.objects.filter(
-                                   theme_id=theme_object.id).order_by('order')]
+        tiles_contents = [o.content
+                          for o in Tile.objects.filter(
+                              theme_id=theme_object.id).order_by('order')]
 
     return render_to_response('layout.html',
                               {'navbar_infos': navbar_infos,
@@ -77,7 +77,7 @@ def build(request, category='', theme=''):
                                'active_category': active_object.name,
                                'category_content': active_object.text,
                                'active_theme': active_theme,
-                               'thumbnails_contents': thumbnails_contents,
+                               'tiles_contents': tiles_contents,
                                'footer_infos': footer_infos,
                                'test_var': navbar_links,
                                })
