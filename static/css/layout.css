@@ -1,3 +1,19 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.container-fluid {
+    min-height: 100%;
+    position: relative;
+}
+
+.body {
+    padding: 10px;
+    padding-bottom: 60px;   /* Height of the footer */
+}
+
 .navbar_row {
     /*justify-content: space-between;*/
     /*margin: 0;*/
@@ -46,6 +62,36 @@
 
 .panel-body {
     font-family: ubuntulight;
+    font-size: 90%;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    height: 60px;   /* Height of the footer */
+    margin-left: 17.1%;
+}
+
+.footer_row {
+    /*margin-left: 0.28%;*/
+    padding: 0;
+    display: flex;
+    /*justify-content: space-between;*/
+}
+
+.footer_entries {
+    margin: 0;
+    padding: 0;
+    /*margin-left: 16.33%;*/
+    width: 100%;
+    /*font-size: 125%;*/
+}
+
+.footer_entry {
+    margin: 0;
+    padding: 0;
+    min-width: 16%;
+    text-align: center;
     font-size: 90%;
 }
 

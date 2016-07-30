@@ -13,6 +13,18 @@ class Category(models.Model):
         return self.name
 
 
+class FooterCategory(models.Model):
+    class Meta:
+        verbose_name_plural = "footer categories"
+    order = models.PositiveSmallIntegerField()
+    name = models.CharField(max_length=100)
+    slug = models.SlugField(max_length=100, default='unset')
+    text = models.TextField()
+
+    def __str__(self):
+        return self.name
+
+
 class Theme(models.Model):
     order = models.PositiveSmallIntegerField()
     name = models.CharField(max_length=100)
