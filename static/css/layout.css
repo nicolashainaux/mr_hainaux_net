@@ -64,26 +64,32 @@ html, body {
     position: absolute;
     bottom: 0;
     height: 60px;   /* Height of the footer */
-    margin-left: 17.1%;
+    margin: 0;
+    width: 100%;
+    padding: 0;
 }
 
 .footer_row {
+    /*display: flex;
+    flex-wrap: nowrap;*/
     padding: 0;
-    display: flex;
+    /*margin: 0;*/
+    margin-left: 16.33%;
     /*justify-content: center;*/
     /*margin-left: 50%;*/
+    width: 83.33%;
 }
 
 .footer_entries {
     /*margin: 0;*/
     padding: 0;
-    width: 100%;
+    margin: 0;
 }
 
 .footer_entry {
     margin: 0;
     padding: 0;
-    min-width: 16%;
+    min-width: 10%;
     text-align: center;
 }
 
