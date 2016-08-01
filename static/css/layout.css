@@ -1,7 +1,13 @@
-html, body {
+html,
+body {
     margin: 0;
     padding: 0;
     height: 100%;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 .wrapper {
@@ -34,6 +40,7 @@ html, body {
 
 .navbar_entry {
     min-width: 16%;
+    padding-right: 0.5%;
     text-align: center;
 }
 
@@ -55,7 +62,7 @@ html, body {
 .panel {
     margin: 0;
     padding: 0;
-    width: 49.5%;
+    width: 33%;
     text-align: center;
     margin-bottom: 10px;
 }
