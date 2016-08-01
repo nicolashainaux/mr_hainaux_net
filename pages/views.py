@@ -31,12 +31,14 @@ def build(request, category='', theme=''):
     else:
         active_object = category_object
 
+    navbar_slugs = [o.slug
+                    for o in Category.objects.all().order_by('order')]
     navbar_links = ['/' + o.slug + '/'
                     for o in Category.objects.all().order_by('order')]
     navbar_links[0] = "/"
     navbar_entries = [o.name
                       for o in Category.objects.all().order_by('order')]
-    navbar_infos = zip(navbar_links, navbar_entries)
+    navbar_infos = zip(navbar_slugs, navbar_links, navbar_entries)
 
     footer_links = [o.slug
                     for o in FooterCategory.objects.all().order_by('order')]
