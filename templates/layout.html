@@ -58,7 +58,7 @@
                 <ul class="nav nav-pills footer-entries">
                     {% for link, entry in footer_infos %}
                         {% if active_category == entry %}
-                            <li role="presentation" class="active footer_entry"><a href="/{{ link }}/">{{ entry }}</a></li>
+                            <li role="presentation" class="active footer_entry active_footer_entry"><a href="/{{ link }}/">{{ entry }}</a></li>
                         {% else %}
                             <li role="presentation" class="footer_entry"><a href="/{{ link }}/">{{ entry }}</a></li>
                         {% endif %}
