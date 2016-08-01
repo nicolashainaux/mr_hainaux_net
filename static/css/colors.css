@@ -1,0 +1,95 @@
+.nav-pills > li.navbar_active_accueil > a,
+.nav-pills > li.navbar_active_accueil > a:hover,
+.nav-pills > li.navbar_active_accueil > a:focus,
+.nav-pills > li.navbar_accueil > a:hover,
+.nav-pills > li.navbar_accueil > a:focus {
+    color: white;
+    background-color: #b7bac8;
+    transition: all 0.6s ease 0s;
+}
+
+.nav-pills > li.navbar_accueil > a {
+    color: #b7bac8;
+    background-color: #f9f9f9;
+    transition: all 0.6s ease 0s;
+}
+
+.nav-pills > li.navbar_active_6e > a,
+.nav-pills > li.navbar_active_6e > a:hover,
+.nav-pills > li.navbar_active_6e > a:focus,
+.nav-pills > li.navbar_6e > a:hover,
+.nav-pills > li.navbar_6e > a:focus {
+    color: white;
+    background-color: #ffd42a;
+    transition: all 0.6s ease 0s;
+}
+
+.nav-pills > li.navbar_6e > a {
+    color: #b7bac8;
+    background-color: #f9f9f9;
+    transition: all 0.6s ease 0s;
+}
+
+.nav-pills > li.navbar_active_5e > a,
+.nav-pills > li.navbar_active_5e > a:hover,
+.nav-pills > li.navbar_active_5e > a:focus,
+.nav-pills > li.navbar_5e > a:hover,
+.nav-pills > li.navbar_5e > a:focus {
+    color: white;
+    background-color: #5aa02c;
+    transition: all 0.6s ease 0s;
+}
+
+.nav-pills > li.navbar_5e > a {
+    color: #b7bac8;
+    background-color: #f9f9f9;
+    transition: all 0.6s ease 0s;
+}
+
+.nav-pills > li.navbar_active_4e > a,
+.nav-pills > li.navbar_active_4e > a:hover,
+.nav-pills > li.navbar_active_4e > a:focus,
+.nav-pills > li.navbar_4e > a:hover,
+.nav-pills > li.navbar_4e > a:focus {
+    color: white;
+    background-color: #3a57ae;
+    transition: all 0.6s ease 0s;
+}
+
+.nav-pills > li.navbar_4e > a {
+    color: #b7bac8;
+    background-color: #f9f9f9;
+    transition: all 0.6s ease 0s;
+}
+
+.nav-pills > li.navbar_active_3e > a,
+.nav-pills > li.navbar_active_3e > a:hover,
+.nav-pills > li.navbar_active_3e > a:focus,
+.nav-pills > li.navbar_3e > a:hover,
+.nav-pills > li.navbar_3e > a:focus {
+    color: white;
+    background-color: #d40000;
+    transition: all 0.6s ease 0s;
+}
+
+.nav-pills > li.navbar_3e > a {
+    color: #b7bac8;
+    background-color: #f9f9f9;
+    transition: all 0.6s ease 0s;
+}
+
+.nav-pills > li.navbar_active_calcul-mental > a,
+.nav-pills > li.navbar_active_calcul-mental > a:hover,
+.nav-pills > li.navbar_active_calcul-mental > a:focus,
+.nav-pills > li.navbar_calcul-mental > a:hover,
+.nav-pills > li.navbar_calcul-mental > a:focus {
+    color: white;
+    background-color: #bc5fd3;
+    transition: all 0.6s ease 0s;
+}
+
+.nav-pills > li.navbar_calcul-mental > a {
+    color: #b7bac8;
+    background-color: #f9f9f9;
+    transition: all 0.6s ease 0s;
+}
