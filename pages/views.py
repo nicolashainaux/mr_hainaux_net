@@ -53,11 +53,15 @@ def build(request, category='', theme=''):
                           for o in Theme.objects.filter(
                               category_id=category_object.id)
                           .order_by('order')]
+        leftmenu_cat_slugs = [active_object.slug
+                              for i in range(len(leftmenu_links))]
         leftmenu_entries = [o.name
                             for o in Theme.objects.filter(
                                 category_id=category_object.id)
                             .order_by('order')]
-        leftmenu_infos = zip(leftmenu_links, leftmenu_entries)
+        leftmenu_infos = zip(leftmenu_cat_slugs,
+                             leftmenu_links,
+                             leftmenu_entries)
 
     # todo: ? check the theme does exist
     theme_slug = theme

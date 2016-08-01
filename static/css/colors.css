@@ -98,6 +98,45 @@ body {
     transition: all 0.6s ease 0s;
 }
 
+li.active.leftentry_cat_6e > a,
+li.active.leftentry_cat_6e > a:hover,
+li.leftentry_cat_6e > a:hover {
+    color: white;
+    background-color: #ffd42a;
+    transition: all 0.6s ease 0s;
+}
+
+li.active.leftentry_cat_5e > a,
+li.active.leftentry_cat_5e > a:hover,
+li.leftentry_cat_5e > a:hover {
+    color: white;
+    background-color: #5aa02c;
+    transition: all 0.6s ease 0s;
+}
+
+
+li.active.leftentry_cat_4e > a,
+li.active.leftentry_cat_4e > a:hover,
+li.leftentry_cat_4e > a:hover {
+    color: white;
+    background-color: #3a57ae;
+    transition: all 0.6s ease 0s;
+}
+
+li.active.leftentry_cat_3e > a,
+li.active.leftentry_cat_3e > a:hover,
+li.leftentry_cat_3e > a:hover {
+    color: white;
+    background-color: #d40000;
+    transition: all 0.6s ease 0s;
+}
+
+.nav-stacked > li > a {
+    color: #999999;
+    background-color: #f0f0f0;
+    transition: all 0.6s ease 0s;
+}
+
 .col-md-10,
 .main {
     color: #333333;

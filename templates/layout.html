@@ -30,11 +30,11 @@
             <div class="row">
                 <div class="col-md-2 leftmenu_col" role="navigation">
                     <ul class="nav nav-pills nav-stacked">
-                        {% for link, entry in leftmenu_infos %}
+                        {% for cat_slug, link, entry in leftmenu_infos %}
                             {% if active_theme == entry %}
-                                <li role="presentation" class="active"><a href="{{ link }}">{{ entry }}</a></li>
+                                <li role="presentation" class="active leftentry_cat_{{ cat_slug }}"><a href="{{ link }}">{{ entry }}</a></li>
                             {% else %}
-                                <li role="presentation"><a href="{{ link }}">{{ entry }}</a></li>
+                                <li role="presentation" class="leftentry_cat_{{ cat_slug }}"><a href="{{ link }}">{{ entry }}</a></li>
                             {% endif %}
                         {% endfor %}
                     </ul>
