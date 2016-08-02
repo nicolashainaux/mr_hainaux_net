@@ -17,23 +17,21 @@ img {
 
 .body {
   padding: 10px;
-  padding-bottom: 60px;   /*  Height of the footer  */
+  padding-bottom: 60px;   /*Height of the footer*/
 }
 
 .navbar_row {
-  /* justify-content: space-between; */
-
-  /* margin: 0; */
+  /*justify-content: space-between;*/
+  /*margin: 0;*/
   padding: 0;
   margin-bottom: 1%;
   margin-left: 0.28%;
   display: flex;
-
-  /* flex-flow: row wrap; */
+  /*flex-flow: row wrap;*/
 }
 
 .navbar_entries {
-  /* justify-content: space-between; */
+  /*justify-content: space-between;*/
   margin: 0;
   padding: 0;
   margin-left: 16.33%;
@@ -47,7 +45,7 @@ img {
 }
 
 .leftmenu_col {
-  /* margin: 0; */
+  /*margin: 0;*/
   padding-right: 0.75%;
   padding-left: 0.75%;
 }
@@ -72,29 +70,26 @@ img {
 .footer {
   position: absolute;
   bottom: 0;
-  height: 60px;   /*  Height of the footer  */
+  height: 60px;   /*Height of the footer*/
   margin: 0;
   width: 100%;
   padding: 0;
 }
 
 .footer_row {
-  /*  display: flex;
-    flex-wrap: nowrap;  */
+  /*display: flex;
+    flex-wrap: nowrap;*/
   padding: 0;
-
-  /*  margin: 0;  */
+  /*margin: 0;*/
   margin-left: 16.33%;
-
-  /*  justify-content: center;  */
-
-  /*  margin-left: 50%;  */
+  /*justify-content: center;*/
+  /*margin-left: 50%;*/
 
   width: 83.33%;
 }
 
 .footer_entries {
-  /* margin: 0; */
+  /*margin: 0;*/
   padding: 0;
   margin: 0;
 }

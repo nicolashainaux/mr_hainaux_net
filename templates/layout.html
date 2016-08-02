@@ -4,7 +4,7 @@
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
     <title>mr.hainaux.net</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous"> -->
     <link rel="stylesheet" type="text/css" href="/static/css/fonts.css"/>
     <link rel="stylesheet" type="text/css" href="/static/css/layout.css"/>
     <link rel="stylesheet" type="text/css" href="/static/css/colors.css"/>
@@ -32,9 +32,9 @@
                     <ul class="nav nav-pills nav-stacked">
                         {% for cat_slug, link, entry in leftmenu_infos %}
                             {% if active_theme == entry %}
-                                <li role="presentation" class="active leftentry_cat_{{ cat_slug }}"><a href="{{ link }}">{{ entry }}</a></li>
+                                <li role="presentation" class="active"><a id="active_leftentry_cat_{{ cat_slug }}" href="{{ link }}">{{ entry }}</a></li>
                             {% else %}
-                                <li role="presentation" class="leftentry_cat_{{ cat_slug }}"><a href="{{ link }}">{{ entry }}</a></li>
+                                <li role="presentation"><a id="leftentry_cat_{{ cat_slug }}" href="{{ link }}">{{ entry }}</a></li>
                             {% endif %}
                         {% endfor %}
                     </ul>

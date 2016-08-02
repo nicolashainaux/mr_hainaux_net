@@ -1,5 +1,9 @@
 body {
-    background-color: #fdfdfd;
+  /*background-color: #eaeaff;*/
+  background-color: #fdfdfd;
+  /*background-color: #4d4d4d;*/
+  /*background-image: url('/static/pics/bg.png');
+  background-repeat: repeat;*/
 }
 
 .nav-pills > li.navbar_active_accueil > a,
@@ -7,15 +11,15 @@ body {
 .nav-pills > li.navbar_active_accueil > a:focus,
 .nav-pills > li.navbar_accueil > a:hover,
 .nav-pills > li.navbar_accueil > a:focus {
-    color: white;
-    background-color: #60a8e2;
-    transition: all 0.6s ease 0s;
+  color: white;
+  background-color: #60a8e2;
+  transition: all 0.6s ease 0s;
 }
 
 .nav-pills > li.navbar_accueil > a {
-    color: #999999;
-    background-color: #f0f0f0;
-    transition: all 0.6s ease 0s;
+  color: #999999;
+  background-color: #f0f0f0;
+  transition: all 0.6s ease 0s;
 }
 
 .nav-pills > li.navbar_active_6e > a,
@@ -23,15 +27,15 @@ body {
 .nav-pills > li.navbar_active_6e > a:focus,
 .nav-pills > li.navbar_6e > a:hover,
 .nav-pills > li.navbar_6e > a:focus {
-    color: white;
-    background-color: #ffd42a;
-    transition: all 0.6s ease 0s;
+  color: white;
+  background-color: #ffd42a;
+  transition: all 0.6s ease 0s;
 }
 
 .nav-pills > li.navbar_6e > a {
-    color: #999999;
-    background-color: #f0f0f0;
-    transition: all 0.6s ease 0s;
+  color: #999999;
+  background-color: #f0f0f0;
+  transition: all 0.6s ease 0s;
 }
 
 .nav-pills > li.navbar_active_5e > a,
@@ -39,15 +43,15 @@ body {
 .nav-pills > li.navbar_active_5e > a:focus,
 .nav-pills > li.navbar_5e > a:hover,
 .nav-pills > li.navbar_5e > a:focus {
-    color: white;
-    background-color: #5aa02c;
-    transition: all 0.6s ease 0s;
+  color: white;
+  background-color: #5aa02c;
+  transition: all 0.6s ease 0s;
 }
 
 .nav-pills > li.navbar_5e > a {
-    color: #999999;
-    background-color: #f0f0f0;
-    transition: all 0.6s ease 0s;
+  color: #999999;
+  background-color: #f0f0f0;
+  transition: all 0.6s ease 0s;
 }
 
 .nav-pills > li.navbar_active_4e > a,
@@ -55,15 +59,15 @@ body {
 .nav-pills > li.navbar_active_4e > a:focus,
 .nav-pills > li.navbar_4e > a:hover,
 .nav-pills > li.navbar_4e > a:focus {
-    color: white;
-    background-color: #3a57ae;
-    transition: all 0.6s ease 0s;
+  color: white;
+  background-color: #3a57ae;
+  transition: all 0.6s ease 0s;
 }
 
 .nav-pills > li.navbar_4e > a {
-    color: #999999;
-    background-color: #f0f0f0;
-    transition: all 0.6s ease 0s;
+  color: #999999;
+  background-color: #f0f0f0;
+  transition: all 0.6s ease 0s;
 }
 
 .nav-pills > li.navbar_active_3e > a,
@@ -71,15 +75,15 @@ body {
 .nav-pills > li.navbar_active_3e > a:focus,
 .nav-pills > li.navbar_3e > a:hover,
 .nav-pills > li.navbar_3e > a:focus {
-    color: white;
-    background-color: #d40000;
-    transition: all 0.6s ease 0s;
+  color: white;
+  background-color: #d40000;
+  transition: all 0.6s ease 0s;
 }
 
 .nav-pills > li.navbar_3e > a {
-    color: #999999;
-    background-color: #f0f0f0;
-    transition: all 0.6s ease 0s;
+  color: #999999;
+  background-color: #f0f0f0;
+  transition: all 0.6s ease 0s;
 }
 
 .nav-pills > li.navbar_active_calcul-mental > a,
@@ -87,71 +91,90 @@ body {
 .nav-pills > li.navbar_active_calcul-mental > a:focus,
 .nav-pills > li.navbar_calcul-mental > a:hover,
 .nav-pills > li.navbar_calcul-mental > a:focus {
-    color: white;
-    background-color: #bc5fd3;
-    transition: all 0.6s ease 0s;
+  color: white;
+  background-color: #bc5fd3;
+  transition: all 0.6s ease 0s;
 }
 
 .nav-pills > li.navbar_calcul-mental > a {
-    color: #999999;
-    background-color: #f0f0f0;
-    transition: all 0.6s ease 0s;
+  color: #999999;
+  background-color: #f0f0f0;
+  transition: all 0.6s ease 0s;
 }
 
-li.active.leftentry_cat_6e > a,
-li.active.leftentry_cat_6e > a:hover,
-li.leftentry_cat_6e > a:hover {
-    color: white;
-    background-color: #ffd42a;
-    transition: all 0.6s ease 0s;
+#active_leftentry_cat_6e,
+#leftentry_cat_6e:hover {
+  color: white;
+  background-color: #ffcc00;
+  transition: all 0.6s ease 0s;
 }
 
-li.active.leftentry_cat_5e > a,
-li.active.leftentry_cat_5e > a:hover,
-li.leftentry_cat_5e > a:hover {
-    color: white;
-    background-color: #5aa02c;
-    transition: all 0.6s ease 0s;
+#leftentry_cat_6e {
+  color: white;
+  background-color: #ffea94;
+  transition: all 0.6s ease 0s;
 }
 
-
-li.active.leftentry_cat_4e > a,
-li.active.leftentry_cat_4e > a:hover,
-li.leftentry_cat_4e > a:hover {
-    color: white;
-    background-color: #3a57ae;
-    transition: all 0.6s ease 0s;
+#active_leftentry_cat_5e,
+#leftentry_cat_5e:hover {
+  color: white;
+  background-color: #5aa02c;
+  transition: all 0.6s ease 0s;
 }
 
-li.active.leftentry_cat_3e > a,
-li.active.leftentry_cat_3e > a:hover,
-li.leftentry_cat_3e > a:hover {
-    color: white;
-    background-color: #d40000;
-    transition: all 0.6s ease 0s;
+#leftentry_cat_5e {
+  color: white;
+  background-color: #c6e9af;
+  transition: all 0.6s ease 0s;
+}
+
+#active_leftentry_cat_4e,
+#leftentry_cat_4e:hover {
+  color: white;
+  background-color: #3a57ae;
+  transition: all 0.6s ease 0s;
+}
+
+#leftentry_cat_4e {
+  color: white;
+  background-color: #afc6e9;
+  transition: all 0.6s ease 0s;
+}
+
+#active_leftentry_cat_3e,
+#leftentry_cat_3e:hover {
+  color: white;
+  background-color: #d40000;
+  transition: all 0.6s ease 0s;
+}
+
+#leftentry_cat_3e {
+  color: white;
+  background-color: #e9afaf;
+  transition: all 0.6s ease 0s;
 }
 
 .nav-stacked > li > a {
-    color: #999999;
-    background-color: #f0f0f0;
-    transition: all 0.6s ease 0s;
+  color: #999999;
+  background-color: #f0f0f0;
+  transition: all 0.6s ease 0s;
 }
 
 .col-md-10,
 .main {
-    color: #333333;
+  color: #333333;
 }
 
 .nav-pills li.footer_entry a {
-    color: #60a8e2;
-    background-color: #fdfdfd;
-    transition: all 0.6s ease 0s;
+  color: #60a8e2;
+  background-color: #fdfdfd;
+  transition: all 0.6s ease 0s;
 }
 
 .nav-pills li.active_footer_entry a,
 .nav-pills li.footer_entry a:hover,
 .nav-pills li.footer_entry a:focus {
-    color: white;
-    background-color: #60a8e2;
-    transition: all 0.6s ease 0s;
+  color: white;
+  background-color: #60a8e2;
+  transition: all 0.6s ease 0s;
 }
