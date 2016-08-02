@@ -1,105 +1,111 @@
 html,
 body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
 img {
-    max-width: 100%;
-    height: auto;
+  max-width: 100%;
+  height: auto;
 }
 
 .wrapper {
-    min-height: 100%;
-    position: relative;
+  min-height: 100%;
+  position: relative;
 }
 
 .body {
-    padding: 10px;
-    padding-bottom: 60px;   /* Height of the footer */
+  padding: 10px;
+  padding-bottom: 60px;   /*  Height of the footer  */
 }
 
 .navbar_row {
-    /*justify-content: space-between;*/
-    /*margin: 0;*/
-    padding: 0;
-    margin-bottom: 1%;
-    margin-left: 0.28%;
-    display: flex;
-    /*flex-flow: row wrap;*/
+  /* justify-content: space-between; */
+
+  /* margin: 0; */
+  padding: 0;
+  margin-bottom: 1%;
+  margin-left: 0.28%;
+  display: flex;
+
+  /* flex-flow: row wrap; */
 }
 
 .navbar_entries {
-    /*justify-content: space-between;*/
-    margin: 0;
-    padding: 0;
-    margin-left: 16.33%;
-    width: 100%;
+  /* justify-content: space-between; */
+  margin: 0;
+  padding: 0;
+  margin-left: 16.33%;
+  width: 100%;
 }
 
 .navbar_entry {
-    min-width: 16%;
-    padding-right: 0.5%;
-    text-align: center;
+  min-width: 16%;
+  padding-right: 0.5%;
+  text-align: center;
 }
 
 .leftmenu_col {
-    /*margin: 0;*/
-    padding-right: 0.75%;
-    padding-left: 0.75%;
+  /* margin: 0; */
+  padding-right: 0.75%;
+  padding-left: 0.75%;
 }
 
 .main {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    width: 81.25%;
-    margin: 0;
-    padding: 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  width: 81.25%;
+  margin: 0;
+  padding: 0;
 }
 
 .panel {
-    margin: 0;
-    padding: 0;
-    width: 33%;
-    text-align: center;
-    margin-bottom: 10px;
+  margin: 0;
+  padding: 0;
+  width: 33%;
+  text-align: center;
+  margin-bottom: 10px;
 }
 
 .footer {
-    position: absolute;
-    bottom: 0;
-    height: 60px;   /* Height of the footer */
-    margin: 0;
-    width: 100%;
-    padding: 0;
+  position: absolute;
+  bottom: 0;
+  height: 60px;   /*  Height of the footer  */
+  margin: 0;
+  width: 100%;
+  padding: 0;
 }
 
 .footer_row {
-    /*display: flex;
-    flex-wrap: nowrap;*/
-    padding: 0;
-    /*margin: 0;*/
-    margin-left: 16.33%;
-    /*justify-content: center;*/
-    /*margin-left: 50%;*/
-    width: 83.33%;
+  /*  display: flex;
+    flex-wrap: nowrap;  */
+  padding: 0;
+
+  /*  margin: 0;  */
+  margin-left: 16.33%;
+
+  /*  justify-content: center;  */
+
+  /*  margin-left: 50%;  */
+
+  width: 83.33%;
 }
 
 .footer_entries {
-    /*margin: 0;*/
-    padding: 0;
-    margin: 0;
+  /* margin: 0; */
+  padding: 0;
+  margin: 0;
 }
 
 .footer_entry {
-    margin: 0;
-    padding: 0;
-    min-width: 10%;
-    text-align: center;
+  margin: 0;
+  padding: 0;
+  min-width: 10%;
+  text-align: center;
 }
 
 .debug {
-    margin-top: 150px;
+  margin-top: 150px;
 }
