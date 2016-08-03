@@ -2,7 +2,7 @@ import requests
 from django.shortcuts import render_to_response
 from django.http import HttpResponse
 
-from pages.models import Category, FooterCategory, Theme, Tile
+from pages.models import Category, FooterCategory, Theme, Tile, News
 from .tools import get_client_ip
 
 
@@ -81,6 +81,13 @@ def build(request, category='', theme=''):
                            theme_id=theme_object.id).order_by('order')]
         tiles_infos = zip(tiles_names, tiles_contents)
 
+    news_data = []
+    if active_object.slug == 'accueil':
+        news_data = [('-'.join(str(o.date).split(sep='-')[::-1]),
+                      o.title,
+                      o.content)
+                     for o in News.objects.all().order_by('date')][::-1]
+
     return render_to_response('layout.html',
                               {'navbar_infos': navbar_infos,
                                'leftmenu_infos': leftmenu_infos,
@@ -89,6 +96,7 @@ def build(request, category='', theme=''):
                                'active_theme': active_theme,
                                'tiles_infos': tiles_infos,
                                'footer_infos': footer_infos,
+                               'news_data': news_data,
                                'test_var': navbar_links,
                                })
 

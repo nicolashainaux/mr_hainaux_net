@@ -113,13 +113,18 @@ body {
   font-size: 200%;
 }
 
-.navbar_entries {
+.navbar_entries,
+.news-main-title {
   font-size: 125%;
 }
 
 .panel-body {
   font-family: ubuntulight;
   font-size: 90%;
+}
+
+.news-body {
+  font-size: 75%;
 }
 
 .footer_entry {

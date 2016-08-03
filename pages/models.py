@@ -35,6 +35,17 @@ class Theme(models.Model):
         return self.category.name + ': ' + self.name
 
 
+class News(models.Model):
+    class Meta:
+        verbose_name_plural = "news"
+    date = models.DateField(auto_now=True)
+    title = models.CharField(max_length=100)
+    content = models.TextField(blank=True)
+
+    def __str__(self):
+        return str(self.date) + '_' + self.title
+
+
 class Tile(models.Model):
     order = models.PositiveSmallIntegerField()
     name = models.CharField(max_length=100)

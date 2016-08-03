@@ -50,6 +50,10 @@ img {
   padding-left: 0.75%;
 }
 
+.leftentry {
+  margin-bottom: 8px;
+}
+
 .main {
   display: flex;
   flex-flow: row wrap;
@@ -99,6 +103,32 @@ img {
   padding: 0;
   min-width: 10%;
   text-align: center;
+}
+
+.news-panel {
+  width: 100%;
+}
+/*.news-main-heading {
+  display: table-cell;
+  vertical-align: middle;
+}*/
+
+.news-main-title {
+  width: 100%;
+  line-height: 50px;
+}
+
+.news-small-title {
+  line-height: 20px;
+}
+
+.news-main-heading {
+  min-height: 10;
+  max-height: 10;
+}
+
+.news-body {
+  padding: 5px;
 }
 
 .debug {
