@@ -13,12 +13,18 @@ body {
 .nav-pills > li.navbar_accueil > a:focus {
   color: white;
   background-color: #60a8e2;
+  border-bottom-style: solid;
+  border-bottom-color: #60a8e2;
+  border-bottom-width: 3px;
   transition: all 0.6s ease 0s;
 }
 
 .nav-pills > li.navbar_accueil > a {
   color: #999999;
   background-color: #f0f0f0;
+  border-bottom-style: solid;
+  border-bottom-color: #60a8e2;
+  border-bottom-width: 3px;
   transition: all 0.6s ease 0s;
 }
 
@@ -29,12 +35,18 @@ body {
 .nav-pills > li.navbar_6e > a:focus {
   color: white;
   background-color: #ffd42a;
+  border-bottom-style: solid;
+  border-bottom-color: #ffd42a;
+  border-bottom-width: 3px;
   transition: all 0.6s ease 0s;
 }
 
 .nav-pills > li.navbar_6e > a {
   color: #999999;
   background-color: #f0f0f0;
+  border-bottom-style: solid;
+  border-bottom-color: #ffd42a;
+  border-bottom-width: 3px;
   transition: all 0.6s ease 0s;
 }
 
@@ -45,12 +57,18 @@ body {
 .nav-pills > li.navbar_5e > a:focus {
   color: white;
   background-color: #5aa02c;
+  border-bottom-style: solid;
+  border-bottom-color: #5aa02c;
+  border-bottom-width: 3px;
   transition: all 0.6s ease 0s;
 }
 
 .nav-pills > li.navbar_5e > a {
   color: #999999;
   background-color: #f0f0f0;
+  border-bottom-style: solid;
+  border-bottom-color: #5aa02c;
+  border-bottom-width: 3px;
   transition: all 0.6s ease 0s;
 }
 
@@ -61,12 +79,18 @@ body {
 .nav-pills > li.navbar_4e > a:focus {
   color: white;
   background-color: #3a57ae;
+  border-bottom-style: solid;
+  border-bottom-color: #3a57ae;
+  border-bottom-width: 3px;
   transition: all 0.6s ease 0s;
 }
 
 .nav-pills > li.navbar_4e > a {
   color: #999999;
   background-color: #f0f0f0;
+  border-bottom-style: solid;
+  border-bottom-color: #3a57ae;
+  border-bottom-width: 3px;
   transition: all 0.6s ease 0s;
 }
 
@@ -77,12 +101,18 @@ body {
 .nav-pills > li.navbar_3e > a:focus {
   color: white;
   background-color: #d40000;
+  border-bottom-style: solid;
+  border-bottom-color: #d40000;
+  border-bottom-width: 3px;
   transition: all 0.6s ease 0s;
 }
 
 .nav-pills > li.navbar_3e > a {
   color: #999999;
   background-color: #f0f0f0;
+  border-bottom-style: solid;
+  border-bottom-color: #d40000;
+  border-bottom-width: 3px;
   transition: all 0.6s ease 0s;
 }
 
@@ -93,12 +123,18 @@ body {
 .nav-pills > li.navbar_calcul-mental > a:focus {
   color: white;
   background-color: #bc5fd3;
+  border-bottom-style: solid;
+  border-bottom-color: #bc5fd3;
+  border-bottom-width: 3px;
   transition: all 0.6s ease 0s;
 }
 
 .nav-pills > li.navbar_calcul-mental > a {
   color: #999999;
   background-color: #f0f0f0;
+  border-bottom-style: solid;
+  border-bottom-color: #bc5fd3;
+  border-bottom-width: 3px;
   transition: all 0.6s ease 0s;
 }
 
