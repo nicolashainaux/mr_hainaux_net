@@ -38,38 +38,38 @@ def build(request, category='', theme=''):
     navbar_links[0] = "/"
     navbar_entries = [o.name
                       for o in Category.objects.all().order_by('order')]
-    navbar_infos = zip(navbar_slugs, navbar_links, navbar_entries)
+    navbar_data = zip(navbar_slugs, navbar_links, navbar_entries)
 
     footer_links = [o.slug
                     for o in FooterCategory.objects.all().order_by('order')]
     footer_entries = [o.name
                       for o in FooterCategory.objects.all().order_by('order')]
-    footer_infos = zip(footer_links, footer_entries)
+    footer_data = zip(footer_links, footer_entries)
 
     if footer:
-        leftmenu_infos = []
+        leftmenu_data = []
     else:
         # [(active_category_slug, themes_links, themes_names)]
-        leftmenu_infos = [(active_category.slug,
-                           '/' + active_category.slug + '/' + thm.slug,
-                           thm.name)
-                          for thm in Theme.objects.filter(
-                              category_id=category_object.id)
-                          .order_by('order')]
+        leftmenu_data = [(active_category.slug,
+                          '/' + active_category.slug + '/' + thm.slug,
+                          thm.name)
+                         for thm in Theme.objects.filter(
+                             category_id=category_object.id)
+                         .order_by('order')]
 
     # todo: ? check the theme does exist
     theme_slug = theme
     active_theme = ''
-    tiles_infos = []
+    tiles_data = []
     if theme_slug != '':
         # todo: check a result at least is returned (otherwise return a 404)
         theme_object = Theme.objects\
             .filter(slug__exact=theme_slug)\
             .filter(category_id=category_object.id)[0]
         active_theme = theme_object.name
-        tiles_infos = [(tile.name, tile.content)
-                       for tile in Tile.objects.filter(
-                           theme_id=theme_object.id).order_by('order')]
+        tiles_data = [(tile.name, tile.content)
+                      for tile in Tile.objects.filter(
+                          theme_id=theme_object.id).order_by('order')]
 
     news_data = []
     if active_category.slug == 'accueil':
@@ -79,13 +79,13 @@ def build(request, category='', theme=''):
                      for o in News.objects.all().order_by('date')][::-1]
 
     return render_to_response('layout.html',
-                              {'navbar_infos': navbar_infos,
-                               'leftmenu_infos': leftmenu_infos,
+                              {'navbar_data': navbar_data,
+                               'leftmenu_data': leftmenu_data,
                                'active_category': active_category.name,
                                'category_content': active_category.text,
                                'active_theme': active_theme,
-                               'tiles_infos': tiles_infos,
-                               'footer_infos': footer_infos,
+                               'tiles_data': tiles_data,
+                               'footer_data': footer_data,
                                'news_data': news_data,
                                'test_var': navbar_links,
                                })
