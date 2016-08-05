@@ -67,13 +67,9 @@ def build(request, category='', theme=''):
             .filter(slug__exact=theme_slug)\
             .filter(category_id=category_object.id)[0]
         active_theme = theme_object.name
-        tiles_contents = [o.content
-                          for o in Tile.objects.filter(
-                              theme_id=theme_object.id).order_by('order')]
-        tiles_names = [o.name
+        tiles_infos = [(o.name, o.content)
                        for o in Tile.objects.filter(
                            theme_id=theme_object.id).order_by('order')]
-        tiles_infos = zip(tiles_names, tiles_contents)
 
     news_data = []
     if active_object.slug == 'accueil':
