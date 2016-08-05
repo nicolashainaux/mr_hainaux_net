@@ -49,19 +49,13 @@ def build(request, category='', theme=''):
     if footer:
         leftmenu_infos = []
     else:
-        leftmenu_links = ['/' + o.category.slug + '/' + o.slug
+        # [(themes_slugs, themes_links, themes_names)]
+        leftmenu_infos = [(active_object.slug,
+                           '/' + active_object.slug + '/' + o.slug,
+                           o.name)
                           for o in Theme.objects.filter(
                               category_id=category_object.id)
                           .order_by('order')]
-        leftmenu_cat_slugs = [active_object.slug
-                              for i in range(len(leftmenu_links))]
-        leftmenu_entries = [o.name
-                            for o in Theme.objects.filter(
-                                category_id=category_object.id)
-                            .order_by('order')]
-        leftmenu_infos = zip(leftmenu_cat_slugs,
-                             leftmenu_links,
-                             leftmenu_entries)
 
     # todo: ? check the theme does exist
     theme_slug = theme
