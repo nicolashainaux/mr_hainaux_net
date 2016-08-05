@@ -27,9 +27,9 @@ def build(request, category='', theme=''):
             pass
 
     if footer:
-        active_object = footer_object
+        active_category = footer_object
     else:
-        active_object = category_object
+        active_category = category_object
 
     navbar_slugs = [o.slug
                     for o in Category.objects.all().order_by('order')]
@@ -49,11 +49,11 @@ def build(request, category='', theme=''):
     if footer:
         leftmenu_infos = []
     else:
-        # [(themes_slugs, themes_links, themes_names)]
-        leftmenu_infos = [(active_object.slug,
-                           '/' + active_object.slug + '/' + o.slug,
-                           o.name)
-                          for o in Theme.objects.filter(
+        # [(active_category_slug, themes_links, themes_names)]
+        leftmenu_infos = [(active_category.slug,
+                           '/' + active_category.slug + '/' + thm.slug,
+                           thm.name)
+                          for thm in Theme.objects.filter(
                               category_id=category_object.id)
                           .order_by('order')]
 
@@ -67,12 +67,12 @@ def build(request, category='', theme=''):
             .filter(slug__exact=theme_slug)\
             .filter(category_id=category_object.id)[0]
         active_theme = theme_object.name
-        tiles_infos = [(o.name, o.content)
-                       for o in Tile.objects.filter(
+        tiles_infos = [(tile.name, tile.content)
+                       for tile in Tile.objects.filter(
                            theme_id=theme_object.id).order_by('order')]
 
     news_data = []
-    if active_object.slug == 'accueil':
+    if active_category.slug == 'accueil':
         news_data = [('-'.join(str(o.date).split(sep='-')[::-1]),
                       o.title,
                       o.content)
@@ -81,8 +81,8 @@ def build(request, category='', theme=''):
     return render_to_response('layout.html',
                               {'navbar_infos': navbar_infos,
                                'leftmenu_infos': leftmenu_infos,
-                               'active_category': active_object.name,
-                               'category_content': active_object.text,
+                               'active_category': active_category.name,
+                               'category_content': active_category.text,
                                'active_theme': active_theme,
                                'tiles_infos': tiles_infos,
                                'footer_infos': footer_infos,
