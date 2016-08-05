@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
-<head>
+
+  <head>
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
     <title>mr.hainaux.net</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -9,89 +10,103 @@
     <link rel="stylesheet" type="text/css" href="/static/css/layout.css"/>
     <link rel="stylesheet" type="text/css" href="/static/css/colors.css"/>
     <link rel="stylesheet" type="text/css" href="/static/css/shapes.css"/>
-</head>
+  </head>
 
-<body class="container-fluid">
+  <body class="container-fluid">
     <div class=wrapper>
-        <div class=body>
-            <div class="row">
-                <div class="col-md-12 navbar_row" role="navigation">
-                    <ul class="nav nav-pills navbar_entries">
-                        {% for slug, link, entry in navbar_data %}
-                            {% if active_category == entry %}
-                                <li role="presentation" class="active navbar_entry navbar_active_{{ slug }}"><a href="{{ link }}">{{ entry }}</a></li>
-                            {% else %}
-                                <li role="presentation" class="navbar_entry navbar_{{ slug }}"><a href="{{ link }}">{{ entry }}</a></li>
-                            {% endif %}
-                        {% endfor %}
-                    </ul>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-2 leftmenu_col" role="navigation">
-                    {% if active_category == 'Accueil' %}
-                        <div class="panel panel-default news-panel">
-                          <div class="panel-heading clearfix news-heading news-main-heading">
-                            <h3 class="panel-title news-title news-main-title">Nouveautés</h3>
-                          </div>
-                        </div>
-                        {% for news_date, news_title, news_content in news_data %}
-                            <div class="panel panel-default news-panel">
-                              <div class="panel-heading news-heading">
-                                <h3 class="panel-title news-title news-small-title">{{ news_date}} : {{ news_title }}</h3>
-                              </div>
-                              {% if news_content != '' %}
-                                  <div class="panel-body news-body">
-                                    {{ news_content }}
-                                  </div>
-                              {% endif %}
-                            </div>
-                        {% endfor %}
-                    {% else %}
-                        <ul class="nav nav-pills nav-stacked">
-                            {% for cat_slug, link, entry in leftmenu_data %}
-                                {% if active_theme == entry %}
-                                    <li role="presentation" class="active leftentry"><a id="active_leftentry_cat_{{ cat_slug }}" href="{{ link }}">{{ entry }}</a></li>
-                                {% else %}
-                                    <li role="presentation" class="leftentry"><a id="leftentry_cat_{{ cat_slug }}" href="{{ link }}">{{ entry }}</a></li>
-                                {% endif %}
-                            {% endfor %}
-                        </ul>
-                    {% endif %}
-                </div>
-                <div class="col-md-10 main">
-                    {% if active_theme == '' %}
-                        {{ category_content|safe }}
-                    {% else %}
-                        {% for name, content in tiles_data %}
-                            <div class="panel panel-default">
-                                <div class="panel-heading">{{ name }}</div>
-                                <div class="panel-body">{{ content|safe }}</div>
-                            </div>
-                        {% endfor %}
-                    {% endif %}
-                </div>
-            </div>
+      <div class=body>
+        <div class="row">
+          <div class="col-md-12 navbar_row" role="navigation">
+            <ul class="nav nav-pills navbar_entries">
+              {% for slug, link, entry in navbar_data %}
+                {% if active_category == entry %}
+                  <li role="presentation" class="active navbar_entry navbar_active_{{ slug }}">
+                    <a href="{{ link }}">{{ entry }}</a>
+                  </li>
+                {% else %}
+                  <li role="presentation" class="navbar_entry navbar_{{ slug }}">
+                    <a href="{{ link }}">{{ entry }}</a>
+                  </li>
+                {% endif %}
+              {% endfor %}
+            </ul>
+          </div>
         </div>
-        <div class="footer row">
-            <div class="col-md-12 footer_row" role="navigation">
-                <ul class="nav nav-pills footer-entries">
-                    {% for link, entry in footer_data %}
-                        {% if active_category == entry %}
-                            <li role="presentation" class="active footer_entry active_footer_entry"><a href="/{{ link }}/">{{ entry }}</a></li>
-                        {% else %}
-                            <li role="presentation" class="footer_entry"><a href="/{{ link }}/">{{ entry }}</a></li>
-                        {% endif %}
-                    {% endfor %}
-                </ul>
-            </div>
-           <!--  <div class="debug">
+        <div class="row">
+          <div class="col-md-2 leftmenu_col" role="navigation">
+            {% if active_category == 'Accueil' %}
+              <div class="panel panel-default news-panel">
+                <div class="panel-heading clearfix news-heading news-main-heading">
+                  <h3 class="panel-title news-title news-main-title">Nouveautés</h3>
+                </div>
+              </div>
+              {% for news_date, news_title, news_content in news_data %}
+                <div class="panel panel-default news-panel">
+                  <div class="panel-heading news-heading">
+                    <h3 class="panel-title news-title news-small-title">{{ news_date}}: {{ news_title }}</h3>
+                  </div>
+                  {% if news_content != '' %}
+                    <div class="panel-body news-body">
+                      {{ news_content }}
+                    </div>
+                  {% endif %}
+                </div>
+              {% endfor %}
+            {% else %}
+              <ul class="nav nav-pills nav-stacked">
+                {% for cat_slug, link, entry in leftmenu_data %}
+                  {% if active_theme == entry %}
+                    <li role="presentation" class="active leftentry">
+                      <a id="active_leftentry_cat_{{ cat_slug }}" href="{{ link }}">{{ entry }}</a>
+                    </li>
+                  {% else %}
+                    <li role="presentation" class="leftentry">
+                      <a id="leftentry_cat_{{ cat_slug }}" href="{{ link }}">{{ entry }}</a>
+                    </li>
+                  {% endif %}
+                {% endfor %}
+              </ul>
+            {% endif %}
+          </div>
+          <div class="col-md-10 main">
+            {% if active_theme == '' %}
+              {{ category_content|safe }}
+            {% else %}
+              {% for name, content in tiles_data %}
+                <div class="panel panel-default">
+                  <div class="panel-heading">{{ name }}</div>
+                  <div class="panel-body">{{ content|safe }}</div>
+                </div>
+              {% endfor %}
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      <div class="footer row">
+
+        <div class="col-md-12 footer_row" role="navigation">
+          <ul class="nav nav-pills footer-entries">
+            {% for link, entry in footer_data %}
+              {% if active_category == entry %}
+                <li role="presentation" class="active footer_entry active_footer_entry">
+                  <a href="/{{ link }}/">{{ entry }}</a>
+                </li>
+              {% else %}
+                <li role="presentation" class="footer_entry">
+                  <a href="/{{ link }}/">{{ entry }}</a>
+                </li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        </div>
+        <!--  <div class="debug">
                 <p>Test: {{ test_var }}<br></p>
             </div> -->
-        </div>
+      </div>
     </div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<script src="/static/js/main.js"></script>
-</body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="/static/js/main.js"></script>
+  </body>
+
 </html>
