@@ -134,3 +134,18 @@ img {
 .debug {
   margin-top: 150px;
 }
+
+div#main_content_accueil,
+div#main_content_calcul-mental,
+div#main_content_6e,
+div#main_content_5e,
+div#main_content_4e,
+div#main_content_3e {
+  display: flex;
+}
+
+div#content_4e_equations,
+div#content_4e_calcul-litteral,
+div#content_4e_triangle-rectangle {
+  display: none;
+}

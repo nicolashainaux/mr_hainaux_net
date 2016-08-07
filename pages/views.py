@@ -49,8 +49,9 @@ def build(request, category='', theme=''):
     if footer:
         leftmenu_data = []
     else:
-        # [(active_category_slug, themes_links, themes_names)]
+        # [(active_category_slug, themes_slugs, themes_links, themes_names)]
         leftmenu_data = [(active_category.slug,
+                          thm.slug,
                           '/' + active_category.slug + '/' + thm.slug,
                           thm.name)
                          for thm in Theme.objects.filter(
@@ -67,9 +68,17 @@ def build(request, category='', theme=''):
             .filter(slug__exact=theme_slug)\
             .filter(category_id=category_object.id)[0]
         active_theme = theme_object.name
-        tiles_data = [(tile.name, tile.content)
-                      for tile in Tile.objects.filter(
-                          theme_id=theme_object.id).order_by('order')]
+        tiles_data = [(thm.slug,
+                       [(tile.name, tile.content)
+                        for tile in Tile.objects.filter(
+                            theme_id=thm.id)
+                        .order_by('order')])
+                      for thm in Theme.objects.filter(
+                          category_id=active_category.id)
+                      .order_by('order')]
+        # tiles_data = [(tile.name, tile.content)
+        #               for tile in Tile.objects.filter(
+        #                   theme_id=theme_object.id).order_by('order')]
 
     news_data = []
     if active_category.slug == 'accueil':
@@ -83,6 +92,7 @@ def build(request, category='', theme=''):
                                'leftmenu_data': leftmenu_data,
                                'active_category': active_category.name,
                                'category_content': active_category.text,
+                               'category_slug': active_category.slug,
                                'active_theme': active_theme,
                                'tiles_data': tiles_data,
                                'footer_data': footer_data,
