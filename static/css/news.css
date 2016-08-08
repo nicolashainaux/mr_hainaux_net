@@ -1,0 +1,41 @@
+.news-panel {
+  width: 100%;
+  border-radius: 0;
+  border-width: 0;
+}
+
+.news-main-heading {
+  min-height: 10;
+  max-height: 10;
+}
+
+.news-heading {
+  padding: 0;
+  background-color: #60a8e2;
+}
+
+.news-title {
+  color: white;
+  background-color: #60a8e2;
+  height: 42px;
+}
+
+.news-main-title {
+  width: 100%;
+  line-height: 50px;
+  height: 55px;
+  font-size: 125%;
+}
+
+.news-small-title {
+  line-height: 20px;
+}
+
+.news-body {
+  font-size: 75%;
+  padding: 5px;
+  border-color: #60a8e2;
+  border-width: 1px;
+  border-top-width: 0;
+  border-style: solid;
+}

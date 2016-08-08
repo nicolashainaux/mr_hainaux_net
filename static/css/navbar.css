@@ -1,9 +1,26 @@
-body {
-  /*background-color: #eaeaff;*/
-  background-color: #fdfdfd;
-  /*background-color: #4d4d4d;*/
-  /*background-image: url('/static/pics/bg.png');
-  background-repeat: repeat;*/
+.navbar_row {
+  padding: 0;
+  margin-bottom: 1%;
+  margin-left: 0.28%;
+  display: flex;
+}
+
+.navbar_entries {
+  margin: 0;
+  padding: 0;
+  margin-left: 16.33%;
+  width: 100%;
+}
+
+.navbar_entries,
+.news-main-title {
+  font-size: 125%;
+}
+
+.navbar_entry {
+  min-width: 16%;
+  padding-right: 0.5%;
+  text-align: center;
 }
 
 .nav-pills > li.navbar_active_accueil > a,
@@ -136,95 +153,4 @@ body {
   border-bottom-color: #bc5fd3;
   border-bottom-width: 3px;
   transition: all 0.6s ease 0s;
-}
-
-#active_leftentry_cat_6e,
-#leftentry_cat_6e:hover {
-  color: white;
-  background-color: #ffcc00;
-  transition: all 0.6s ease 0s;
-}
-
-#leftentry_cat_6e {
-  color: white;
-  background-color: #ffea94;
-  transition: all 0.6s ease 0s;
-}
-
-#active_leftentry_cat_5e,
-#leftentry_cat_5e:hover {
-  color: white;
-  background-color: #5aa02c;
-  transition: all 0.6s ease 0s;
-}
-
-#leftentry_cat_5e {
-  color: white;
-  background-color: #c6e9af;
-  transition: all 0.6s ease 0s;
-}
-
-#active_leftentry_cat_4e,
-#leftentry_cat_4e:hover {
-  color: white;
-  background-color: #3a57ae;
-  transition: all 0.6s ease 0s;
-}
-
-#leftentry_cat_4e {
-  color: white;
-  background-color: #afc6e9;
-  transition: all 0.6s ease 0s;
-}
-
-#active_leftentry_cat_3e,
-#leftentry_cat_3e:hover {
-  color: white;
-  background-color: #d40000;
-  transition: all 0.6s ease 0s;
-}
-
-#leftentry_cat_3e {
-  color: white;
-  background-color: #e9afaf;
-  transition: all 0.6s ease 0s;
-}
-
-.nav-stacked > li > a {
-  color: #999999;
-  background-color: #f0f0f0;
-  transition: all 0.6s ease 0s;
-}
-
-.col-md-10,
-.main {
-  color: #333333;
-}
-
-.nav-pills li.footer_entry a {
-  color: #60a8e2;
-  background-color: #fdfdfd;
-  transition: all 0.6s ease 0s;
-}
-
-.nav-pills li.active_footer_entry a,
-.nav-pills li.footer_entry a:hover,
-.nav-pills li.footer_entry a:focus {
-  color: white;
-  background-color: #60a8e2;
-  transition: all 0.6s ease 0s;
-}
-
-.news-heading {
-  padding: 0;
-  background-color: #60a8e2;
-}
-
-.news-title {
-  color: white;
-  background-color: #60a8e2;
-}
-
-.news-body {
-  border-color: #60a8e2;
 }
