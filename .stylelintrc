@@ -1,6 +1,6 @@
 {
     "rules": {
-        "color-hex-length": "long",
+        "color-hex-length": "short",
         "comment-whitespace-inside": "never",
         "comment-empty-line-before": "never"
     }

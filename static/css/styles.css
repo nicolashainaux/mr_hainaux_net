@@ -19,15 +19,15 @@ body {
   height: 100%;
 }
 body {
-/*background-color: #eaeaff;*/
+/*background-color #eaeaff*/
   background-color: #fdfdfd;
   padding: 10px;
-  padding-bottom: 60px; /*Height of the footer*/
+  padding-bottom: 60px;
   font-family: ubunturegular;
   font-size: 200%;
-/*background-color: #4d4d4d;*/
-/*background-image: url('/static/pics/bg.png');
-  background-repeat: repeat;*/
+/*background-color #4d4d4d*/
+/*background-image url('/static/pics/bg.png')
+  background-repeat repeat*/
 }
 img {
   max-width: 100%;
@@ -61,14 +61,11 @@ img {
   display: flex;
 }
 .navbar_entries {
+  font-size: 125%;
   margin: 0;
   padding: 0;
   margin-left: 16.33%;
   width: 100%;
-}
-.navbar_entries,
-.news-main-title {
-  font-size: 125%;
 }
 .navbar_entry {
   min-width: 16%;
@@ -196,17 +193,17 @@ img {
   transition: all 0.6s ease 0s;
 }
 .news-panel {
-  width: 100%;
   border-radius: 0;
   border-width: 0;
+  width: 100%;
 }
 .news-main-heading {
-  min-height: 10;
   max-height: 10;
+  min-height: 10;
 }
 .news-heading {
-  padding: 0;
   background-color: #60a8e2;
+  padding: 0;
 }
 .news-title {
   color: #fff;
@@ -214,24 +211,23 @@ img {
   height: 42px;
 }
 .news-main-title {
-  width: 100%;
-  line-height: 50px;
-  height: 55px;
   font-size: 125%;
+  height: 55px;
+  line-height: 50px;
+  width: 100%;
 }
 .news-small-title {
   line-height: 20px;
 }
 .news-body {
   font-size: 75%;
-  padding: 5px;
   border-color: #60a8e2;
   border-width: 1px;
   border-top-width: 0;
   border-style: solid;
+  padding: 5px;
 }
 .leftmenu_col {
-/*margin: 0;*/
   padding-right: 0.75%;
   padding-left: 0.75%;
 }
@@ -295,9 +291,9 @@ img {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
-  width: 81.25%;
   margin: 0;
   padding: 0;
+  width: 81.25%;
 }
 div#main_content_accueil,
 div#main_content_calcul-mental,
@@ -313,35 +309,27 @@ div#content_4e_triangle-rectangle {
   display: none;
 }
 .footer {
-  position: absolute;
   bottom: 0;
-  height: 60px; /*Height of the footer*/
+  height: 60px;
   margin: 0;
-  width: 100%;
   padding: 0;
+  position: absolute;
+  width: 100%;
 }
 .footer_row {
-/*display: flex;
-    flex-wrap: nowrap;*/
-  padding: 0;
-/*margin: 0;*/
   margin-left: 16.33%;
-/*justify-content: center;*/
-/*margin-left: 50%;*/
+  padding: 0;
   width: 83.33%;
 }
 .footer_entries {
-/*margin: 0;*/
-  padding: 0;
   margin: 0;
+  padding: 0;
 }
 .footer_entry {
   font-size: 83%;
-}
-.footer_entry {
   margin: 0;
-  padding: 0;
   min-width: 10%;
+  padding: 0;
   text-align: center;
 }
 .nav-pills li.footer_entry a {
