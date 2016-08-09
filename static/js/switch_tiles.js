@@ -68,6 +68,7 @@ function displayTiles (event) {
 
   var leftmenu_active_entry = document.getElementById(leftmenu_active_id)
   leftmenu_active_entry.classList.add('active')
+  leftmenu_active_entry.blur()
 
   fadeOut(central_content).then(function (result) {
     for (var i = 0; i < all_tiles_groups.length; ++i) {
@@ -99,6 +100,7 @@ function displayCategoryContent (event) {
     for (var i = 0; i < all_tiles_groups.length; ++i) {
       all_tiles_groups[i].style.display = 'none'
     }
+    document.querySelector('.active.navbar_entry > a').blur()
     document.getElementById('main_content_' + cat).style.display = 'block'
     fadeIn(central_content)
   })
