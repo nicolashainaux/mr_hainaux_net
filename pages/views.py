@@ -61,24 +61,22 @@ def build(request, category='', theme=''):
     # todo: ? check the theme does exist
     theme_slug = theme
     active_theme = ''
-    tiles_data = []
+    # tiles_data = []
     if theme_slug != '':
         # todo: check a result at least is returned (otherwise return a 404)
         theme_object = Theme.objects\
             .filter(slug__exact=theme_slug)\
             .filter(category_id=category_object.id)[0]
         active_theme = theme_object.name
-        tiles_data = [(thm.slug,
-                       [(tile.name, tile.content)
-                        for tile in Tile.objects.filter(
-                            theme_id=thm.id)
-                        .order_by('order')])
-                      for thm in Theme.objects.filter(
-                          category_id=active_category.id)
-                      .order_by('order')]
-        # tiles_data = [(tile.name, tile.content)
-        #               for tile in Tile.objects.filter(
-        #                   theme_id=theme_object.id).order_by('order')]
+
+    tiles_data = [(thm.slug,
+                   [(tile.name, tile.content)
+                    for tile in Tile.objects.filter(
+                        theme_id=thm.id)
+                    .order_by('order')])
+                  for thm in Theme.objects.filter(
+                      category_id=active_category.id)
+                  .order_by('order')]
 
     news_data = []
     if active_category.slug == 'accueil':
@@ -97,7 +95,7 @@ def build(request, category='', theme=''):
                                'tiles_data': tiles_data,
                                'footer_data': footer_data,
                                'news_data': news_data,
-                               'test_var': navbar_links,
+                               'test_var': tiles_data,
                                })
 
 

@@ -295,6 +295,9 @@ img {
   padding: 0;
   width: 81.25%;
 }
+div#central_content {
+  display: block;
+}
 div#main_content_accueil,
 div#main_content_calcul-mental,
 div#main_content_6e,
@@ -303,9 +306,9 @@ div#main_content_4e,
 div#main_content_3e {
   display: flex;
 }
-div#content_4e_equations,
-div#content_4e_calcul-litteral,
-div#content_4e_triangle-rectangle {
+div#central_4e_equations,
+div#central_4e_calcul-litteral,
+div#central_4e_triangle-rectangle {
   display: none;
 }
 .footer {

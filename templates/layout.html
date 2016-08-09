@@ -53,12 +53,12 @@
               <ul class="nav nav-pills nav-stacked">
                 {% for cat_slug, thm_slug, link, entry in leftmenu_data %}
                   {% if active_theme == entry %}
-                    <li role="presentation" class="active leftentry">
-                      <a id="leftmenu_{{ cat_slug }}_{{ thm_slug }}" href="{{ link }}">{{ entry }}</a>
+                    <li role="presentation" class="active">
+                      <a class="leftentry" id="leftmenu_{{ cat_slug }}_{{ thm_slug }}" href="{{ link }}">{{ entry }}</a>
                     </li>
                   {% else %}
-                    <li role="presentation" class="leftentry">
-                      <a id="leftmenu_{{ cat_slug }}_{{ thm_slug }}" href="{{ link }}">{{ entry }}</a>
+                    <li role="presentation">
+                      <a class="leftentry" id="leftmenu_{{ cat_slug }}_{{ thm_slug }}" href="{{ link }}">{{ entry }}</a>
                     </li>
                   {% endif %}
                 {% endfor %}
@@ -69,8 +69,9 @@
             <div id="main_content_{{ category_slug }}">
               {{ category_content|safe }}
             </div>
+            <div id="central_content">
             {% for theme_slug, data in tiles_data %}
-              <div id="content_{{ category_slug }}_{{ theme_slug }}">
+              <div class="tiles_group" id="central_{{ category_slug }}_{{ theme_slug }}">
                 {% for name, content in data %}
                   <div class="panel panel-default">
                     <div class="panel-heading">{{ name }}</div>
@@ -79,6 +80,7 @@
                 {% endfor %}
               </div>
             {% endfor %}
+            </div>
           </div>
         </div>
       </div>
@@ -99,9 +101,9 @@
             {% endfor %}
           </ul>
         </div>
-        <!--  <div class="debug">
-                <p>Test: {{ test_var }}<br></p>
-            </div> -->
+        <!--<div class="debug">
+          <p>Test: {{ test_var }}<br></p>
+        </div>-->
       </div>
     </div>
 
