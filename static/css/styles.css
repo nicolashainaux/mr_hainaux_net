@@ -288,14 +288,20 @@ img {
   color: #333;
 }
 .main {
+  margin: 0;
+  padding: 0;
+}
+.tiles_group {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
   margin: 0;
   padding: 0;
-  width: 81.25%;
+  width: 97.36%;
 }
 div#central_content {
+  margin: 0;
+  padding: 0;
   display: block;
 }
 div#main_content_accueil,
@@ -310,6 +316,13 @@ div#central_4e_equations,
 div#central_4e_calcul-litteral,
 div#central_4e_triangle-rectangle {
   display: none;
+}
+.tile {
+  margin: 0;
+  padding: 0;
+  width: 33%;
+  text-align: center;
+  margin-bottom: 10px;
 }
 .footer {
   bottom: 0;

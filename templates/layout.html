@@ -73,7 +73,7 @@
             {% for theme_slug, data in tiles_data %}
               <div class="tiles_group" id="central_{{ category_slug }}_{{ theme_slug }}">
                 {% for name, content in data %}
-                  <div class="panel panel-default">
+                  <div class="panel panel-default tile">
                     <div class="panel-heading">{{ name }}</div>
                     <div class="panel-body">{{ content|safe }}</div>
                   </div>
