@@ -42,7 +42,7 @@ function fadeIn (el, display) {
 }
 
 function displayTiles (event) {
-  console.log('dans displayTiles: ' + id)
+  // console.log('dans displayTiles: ' + id)
   event.preventDefault()
   var parser = document.createElement('a')
   var central_content = document.getElementById('central_content')
@@ -50,17 +50,27 @@ function displayTiles (event) {
   parser.href = this.href
   var cat = parser.pathname.split('/')[1]
   var thm = parser.pathname.split('/')[2]
-  var id = 'central_' + cat + '_' + thm
+  var id = cat + '_' + thm
+  var tiles_group_id = 'central_' + id
+  var leftmenu_active_id = 'leftmenu_' + id
+
+  // console.log('dans displayTiles: ' + '.leftentry.cat_' + cat)
+  var all_leftmenu_entries = document.querySelectorAll('.leftentry.cat_' + cat)
+  for (var i = 0; i < all_leftmenu_entries.length; ++i) {
+    all_leftmenu_entries[i].classList.remove('active')
+  }
+
+  var leftmenu_active_entry = document.getElementById(leftmenu_active_id)
+  leftmenu_active_entry.classList.add('active')
 
   fadeOut(central_content).then(function (result) {
     for (var i = 0; i < all_tiles_groups.length; ++i) {
       all_tiles_groups[i].style.display = 'none'
     }
     document.getElementById('main_content_' + cat).style.display = 'none'
-    var tiles_group = document.getElementById(id)
+    var tiles_group = document.getElementById(tiles_group_id)
     tiles_group.style.display = 'flex'
     fadeIn(central_content)
   })
-
   return false
 }
