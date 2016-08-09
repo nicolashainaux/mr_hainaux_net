@@ -1,10 +1,16 @@
 window.addEventListener('load', registerEvents, false)
 
 function registerEvents (event) {
-  console.log('dans registerEvents')
+  // console.log('dans registerEvents')
+  // var parser = document.createElement('a')
+  // parser.href = this.href
+  // var cat = parser.pathname.split('/')[1]
+  var navbar_active_entry = document.querySelector('.active.navbar_entry')
+  navbar_active_entry.addEventListener('click', displayCategoryContent, false)
+
   var leftentriesList = document.querySelectorAll('a.leftentry')
   for (var i = 0; i < leftentriesList.length; ++i) {
-    console.log('dans registerEvents: ' + i)
+    // console.log('dans registerEvents: ' + i)
     leftentriesList[i].addEventListener('click', displayTiles, false)
   }
   // document.getElementById('leftmenu_4e_equations').addEventListener('click', displayTiles, false)
@@ -70,6 +76,30 @@ function displayTiles (event) {
     document.getElementById('main_content_' + cat).style.display = 'none'
     var tiles_group = document.getElementById(tiles_group_id)
     tiles_group.style.display = 'flex'
+    fadeIn(central_content)
+  })
+  return false
+}
+
+function displayCategoryContent (event) {
+  event.preventDefault()
+  var parser = document.createElement('a')
+  var central_content = document.getElementById('central_content')
+  var all_tiles_groups = document.getElementsByClassName('tiles_group')
+  parser.href = this.href
+  var cat = parser.pathname.split('/')[1]
+
+  // console.log('dans displayCategoryContent: ' + )
+  var all_leftmenu_entries = document.querySelectorAll('.leftentry.cat_' + cat)
+  for (var i = 0; i < all_leftmenu_entries.length; ++i) {
+    all_leftmenu_entries[i].classList.remove('active')
+  }
+
+  fadeOut(central_content).then(function (result) {
+    for (var i = 0; i < all_tiles_groups.length; ++i) {
+      all_tiles_groups[i].style.display = 'none'
+    }
+    document.getElementById('main_content_' + cat).style.display = 'block'
     fadeIn(central_content)
   })
   return false
