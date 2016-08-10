@@ -85,7 +85,10 @@ def build(request, category='', theme=''):
                       o.content)
                      for o in News.objects.all().order_by('date')][::-1]
 
-    return render_to_response('layout.html',
+    alternate_templates = {'accueil': 'home.html'}
+
+    return render_to_response(alternate_templates.get(active_category.slug,
+                                                      'default.html'),
                               {'navbar_data': navbar_data,
                                'leftmenu_data': leftmenu_data,
                                'active_category': active_category.name,

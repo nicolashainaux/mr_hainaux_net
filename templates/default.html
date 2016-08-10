@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+
+{% block leftmenu %}
+  <ul class="nav nav-pills nav-stacked">
+    {% for cat_slug, thm_slug, link, entry in leftmenu_data %}
+      {% if active_theme == entry %}
+        <li role="presentation" class="active">
+          <a class="leftentry cat_{{ cat_slug }} active" id="leftmenu_{{ cat_slug }}_{{ thm_slug }}" href="{{ link }}">{{ entry }}</a>
+        </li>
+      {% else %}
+        <li role="presentation">
+          <a class="leftentry cat_{{ cat_slug }}" id="leftmenu_{{ cat_slug }}_{{ thm_slug }}" href="{{ link }}">{{ entry }}</a>
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+{% endblock %}

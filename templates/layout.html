@@ -31,39 +31,7 @@
         </div>
         <div class="row">
           <div class="col-md-2 leftmenu_col" role="navigation">
-            {% if active_category == 'Accueil' %}
-              <div class="panel panel-default news-panel">
-                <div class="panel-heading clearfix news-heading news-main-heading">
-                  <h3 class="panel-title news-title news-main-title">Nouveautés</h3>
-                </div>
-              </div>
-              {% for news_date, news_title, news_content in news_data %}
-                <div class="panel panel-default news-panel">
-                  <div class="panel-heading news-heading">
-                    <h3 class="panel-title news-title news-small-title">{{ news_date}}: {{ news_title }}</h3>
-                  </div>
-                  {% if news_content != '' %}
-                    <div class="panel-body news-body">
-                      {{ news_content }}
-                    </div>
-                  {% endif %}
-                </div>
-              {% endfor %}
-            {% else %}
-              <ul class="nav nav-pills nav-stacked">
-                {% for cat_slug, thm_slug, link, entry in leftmenu_data %}
-                  {% if active_theme == entry %}
-                    <li role="presentation" class="active">
-                      <a class="leftentry cat_{{ cat_slug }} active" id="leftmenu_{{ cat_slug }}_{{ thm_slug }}" href="{{ link }}">{{ entry }}</a>
-                    </li>
-                  {% else %}
-                    <li role="presentation">
-                      <a class="leftentry cat_{{ cat_slug }}" id="leftmenu_{{ cat_slug }}_{{ thm_slug }}" href="{{ link }}">{{ entry }}</a>
-                    </li>
-                  {% endif %}
-                {% endfor %}
-              </ul>
-            {% endif %}
+            {% block leftmenu %}{% endblock %}
           </div>
           <div class="col-md-10 main">
             <div id="main_content_{{ category_slug }}">
