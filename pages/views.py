@@ -3,7 +3,7 @@ from django.shortcuts import render_to_response
 from django.http import HttpResponse
 
 from pages.models import Category, FooterCategory, Theme, Tile, News
-from .tools import get_client_ip
+from .tools import get_client_ip, clean_list
 
 
 def home(request):
@@ -48,9 +48,30 @@ def build(request, category='', theme=''):
 
     if footer:
         leftmenu_data = []
+    elif active_category.slug == 'calcul-mental':
+        leftmenu_titles = [' '.join(o.name.split()[:2])
+                           for o in Theme.objects.filter(
+                               category_id=category_object.id)
+                           .order_by('order')]
+        leftmenu_titles = clean_list(leftmenu_titles)
+        leftmenu_data = []
+        for t in leftmenu_titles:
+            # [(complete link, theme slug, theme name, entry name)]
+            leftmenu_infos = [('/' + thm.category.slug + '/' + thm.slug,
+                               thm.slug,
+                               thm.name,
+                               ' '.join(thm.name.split()[-2:]))
+                              for thm in Theme.objects.filter(
+                                  category_id=category_object.id)
+                              .order_by('order')
+                              if ' '.join(thm.name.split()[:2]) == t]
+            leftmenu_data.append((t,
+                                  t.replace(' ', ''),
+                                  leftmenu_infos))
     else:
-        # [(active_category_slug, themes_links, themes_names)]
+        # [(active_category_slug, themes_slugs, themes_links, themes_names)]
         leftmenu_data = [(active_category.slug,
+                          thm.slug,
                           '/' + active_category.slug + '/' + thm.slug,
                           thm.name)
                          for thm in Theme.objects.filter(
@@ -60,16 +81,22 @@ def build(request, category='', theme=''):
     # todo: ? check the theme does exist
     theme_slug = theme
     active_theme = ''
-    tiles_data = []
+    # tiles_data = []
     if theme_slug != '':
         # todo: check a result at least is returned (otherwise return a 404)
         theme_object = Theme.objects\
             .filter(slug__exact=theme_slug)\
             .filter(category_id=category_object.id)[0]
         active_theme = theme_object.name
-        tiles_data = [(tile.name, tile.content)
-                      for tile in Tile.objects.filter(
-                          theme_id=theme_object.id).order_by('order')]
+
+    tiles_data = [(thm.slug,
+                   [(tile.name, tile.content)
+                    for tile in Tile.objects.filter(
+                        theme_id=thm.id)
+                    .order_by('order')])
+                  for thm in Theme.objects.filter(
+                      category_id=active_category.id)
+                  .order_by('order')]
 
     news_data = []
     if active_category.slug == 'accueil':
@@ -78,16 +105,21 @@ def build(request, category='', theme=''):
                       o.content)
                      for o in News.objects.all().order_by('date')][::-1]
 
-    return render_to_response('layout.html',
+    alternate_templates = {'accueil': 'home.html',
+                           'calcul-mental': 'mental_calculation.html'}
+
+    return render_to_response(alternate_templates.get(active_category.slug,
+                                                      'default.html'),
                               {'navbar_data': navbar_data,
                                'leftmenu_data': leftmenu_data,
                                'active_category': active_category.name,
                                'category_content': active_category.text,
+                               'category_slug': active_category.slug,
                                'active_theme': active_theme,
                                'tiles_data': tiles_data,
                                'footer_data': footer_data,
                                'news_data': news_data,
-                               'test_var': navbar_links,
+                               'test_var': leftmenu_data,
                                })
 
 

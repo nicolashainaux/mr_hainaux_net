@@ -1,0 +1,186 @@
+$yellow = #ffd42a
+
+label
+	font-weight normal
+
+// svg
+// 	z-index 2000
+
+.accordion
+	width 100%
+	margin 0
+	// margin 10px auto 30px auto
+	text-align left
+
+.accordion label
+	padding-left 13px
+	// margin-bottom 8px
+	margin-bottom 0
+	position relative
+	opacity 0.5
+	transition all 0.6s ease 0s
+	// z-index 20
+	display block
+	height 51px
+	cursor pointer
+	color #777
+	// text-shadow 1px 1px 1px rgba(255,255,255,0.8)
+	line-height 47px
+	// background #ffffff
+	// background -moz-linear-gradient(top, #ffffff 1%, #eaeaea 100%)
+	// background -webkit-gradient(linear, left top, left bottom, color-stop(1%,#ffffff), color-stop(100%,#eaeaea))
+	// background -webkit-linear-gradient(top, #ffffff 1%,#eaeaea 100%)
+	// background -o-linear-gradient(top, #ffffff 1%,#eaeaea 100%)
+	// background -ms-linear-gradient(top, #ffffff 1%,#eaeaea 100%)
+	// background linear-gradient(top, #ffffff 1%,#eaeaea 100%)
+	// filter progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#eaeaea',GradientType=0 )
+	// box-shadow:
+	// 	0px 0px 0px 1px rgba(155,155,155,0.3),
+	// 	1px 0px 0px 0px rgba(255,255,255,0.9) inset,
+	// 	0px 2px 2px rgba(0,0,0,0.1)
+
+.accordion label:hover
+	background #fff
+	opacity 1
+	transition all 0.6s ease 0s
+
+.accordion input:checked + label
+.accordion input:checked + label:hover
+	background #c6e1ec
+	color #3d7489
+	opacity 1
+	transition all 0.6s ease 0s
+	// text-shadow 0px 1px 1px rgba(255,255,255, 0.6)
+	// box-shadow:
+	// 	0px 0px 0px 1px rgba(155,155,155,0.3),
+	// 	0px 2px 2px rgba(0,0,0,0.1)
+
+.accordion label:hover:after
+.accordion input:checked + label:hover:after
+	content ''
+	position absolute
+	// width 24px
+	height 24px
+	right 13px
+	top 7px
+	// background transparent url(../images/arrow_down.png) no-repeat center center
+
+// .accordion input:checked + label:hover:after
+// 	background-image url(../images/arrow_up.png)
+
+.accordion input
+	display none
+
+.accordion article
+	opacity 1
+	margin-left 20px
+	// background rgba(255, 255, 255, 0)
+	// margin-top -1px
+	overflow hidden
+	height 0px
+	position relative
+	z-index 10
+	// -webkit-transition height 0.3s ease-in-out, box-shadow 0.6s linear
+	// -moz-transition height 0.3s ease-in-out, box-shadow 0.6s linear
+	// -o-transition height 0.3s ease-in-out, box-shadow 0.6s linear
+	// -ms-transition height 0.3s ease-in-out, box-shadow 0.6s linear
+	// transition height 0.3s ease-in-out, box-shadow 0.6s linear
+	-webkit-transition height 0.3s ease-in-out
+	-moz-transition height 0.3s ease-in-out
+	-o-transition height 0.3s ease-in-out
+	-ms-transition height 0.3s ease-in-out
+	transition height 0.3s ease-in-out
+
+.accordion article p
+	// font-style italic
+	color #777
+	line-height 23px
+	// font-size 14px
+	padding 3px
+	// text-shadow 1px 1px 1px rgba(255,255,255,0.8)
+
+.accordion input:checked ~ article
+	// -webkit-transition height 0.5s ease-in-out, box-shadow 0.1s linear
+	// -moz-transition height 0.5s ease-in-out, box-shadow 0.1s linear
+	// -o-transition height 0.5s ease-in-out, box-shadow 0.1s linear
+	// -ms-transition height 0.5s ease-in-out, box-shadow 0.1s linear
+	// transition height 0.5s ease-in-out, box-shadow 0.1s linear
+	// box-shadow 0px 0px 0px 1px rgba(155,155,155,0.3)
+	-webkit-transition height 0.5s ease-in-out
+	-moz-transition height 0.5s ease-in-out
+	-o-transition height 0.5s ease-in-out
+	-ms-transition height 0.5s ease-in-out
+	transition height 0.5s ease-in-out
+
+.accordion input:checked ~ article.ac-xsmall
+	height 105px
+	// margin-bottom 8px
+	margin-bottom 0
+
+.accordion input:checked ~ article.ac-small
+	height 160px
+
+.accordion input:checked ~ article.ac-medium
+	height 180px
+
+.accordion input:checked ~ article.ac-large
+	height 230px
+
+// li.leftentry.cat_calcul-mental
+	// padding-left 20px
+	// margin-left 20px
+	// border-left-style solid
+	// border-left-width 15px
+	// border-left-color rgba(255, 212, 42, 1)
+
+	// box-shadow 0px 0px 0px 8px rgba(0,0,0,1)
+
+.leftentry.calcul-mental
+	margin-bottom 0
+
+a.leftentry.cat_calcul-mental
+	margin-bottom 0
+	color white
+	opacity 0.5
+	transition all 0.6s ease 0s
+
+a.leftentry.cat_calcul-mental:hover
+a.leftentry.cat_calcul-mental.active
+	opacity 1
+	transition all 0.6s ease 0s
+
+.aclabel
+	border-top-left-radius 15px
+	border-top-right-radius 0
+	border-bottom-left-radius 15px
+	border-bottom-right-radius 0
+
+#aclabel-Ceinturejaune
+#aclabel-Ceintureblanche
+	margin-bottom 2px
+
+.leftentry_belt
+	margin-bottom 6px
+
+a.leftentry.cat_calcul-mental
+	border-radius 0
+	margin-bottom 2px
+	padding-left 20px
+
+a.leftentry.cat_calcul-mental[href$="2e-trait"]
+	border-bottom-left-radius 15px
+
+#aclabel-Ceinturejaune
+.leftentry.Ceinturejaune.cat_calcul-mental
+	color white
+	background-color $yellow
+
+#aclabel-Ceintureblanche
+.leftentry.Ceintureblanche.cat_calcul-mental
+	background white
+	// url("/static/pics/un_trait_jaune.svg") 30px 0px/8px 50px no-repeat fixed center
+	color #4d4d4d
+
+// .leftentry.Ceintureblanche.cat_calcul-mental
+// 	background-color white
+// 	color #4d4d4d
