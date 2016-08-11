@@ -21,6 +21,9 @@
   font-style normal
 
 html
+  overflow-y scroll
+
+html
 body
   margin 0
   padding 0
@@ -38,8 +41,8 @@ body
   font-family ubunturegular
   font-size 200%
   /*background-color #4d4d4d*/
-  /*background-image url('/static/pics/bg.png')
-  background-repeat repeat*/
+  background-image url('/static/pics/possible_bg')
+  background-repeat repeat
 
 img
   max-width 100%
@@ -50,7 +53,10 @@ img
   position relative
 
 .nav-pills > li > a
-  border-radius 0
+  border-top-left-radius 15px
+  border-top-right-radius 15px
+  border-bottom-left-radius 0
+  border-bottom-right-radius 0
 
 .panel
   margin 0

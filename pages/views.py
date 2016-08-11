@@ -3,7 +3,7 @@ from django.shortcuts import render_to_response
 from django.http import HttpResponse
 
 from pages.models import Category, FooterCategory, Theme, Tile, News
-from .tools import get_client_ip
+from .tools import get_client_ip, clean_list
 
 
 def home(request):
@@ -48,6 +48,26 @@ def build(request, category='', theme=''):
 
     if footer:
         leftmenu_data = []
+    elif active_category.slug == 'calcul-mental':
+        leftmenu_titles = [' '.join(o.name.split()[:2])
+                           for o in Theme.objects.filter(
+                               category_id=category_object.id)
+                           .order_by('order')]
+        leftmenu_titles = clean_list(leftmenu_titles)
+        leftmenu_data = []
+        for t in leftmenu_titles:
+            # [(complete link, theme slug, theme name, entry name)]
+            leftmenu_infos = [('/' + thm.category.slug + '/' + thm.slug,
+                               thm.slug,
+                               thm.name,
+                               ' '.join(thm.name.split()[-2:]))
+                              for thm in Theme.objects.filter(
+                                  category_id=category_object.id)
+                              .order_by('order')
+                              if ' '.join(thm.name.split()[:2]) == t]
+            leftmenu_data.append((t,
+                                  t.replace(' ', ''),
+                                  leftmenu_infos))
     else:
         # [(active_category_slug, themes_slugs, themes_links, themes_names)]
         leftmenu_data = [(active_category.slug,
@@ -85,7 +105,8 @@ def build(request, category='', theme=''):
                       o.content)
                      for o in News.objects.all().order_by('date')][::-1]
 
-    alternate_templates = {'accueil': 'home.html'}
+    alternate_templates = {'accueil': 'home.html',
+                           'calcul-mental': 'mental_calculation.html'}
 
     return render_to_response(alternate_templates.get(active_category.slug,
                                                       'default.html'),
@@ -98,7 +119,7 @@ def build(request, category='', theme=''):
                                'tiles_data': tiles_data,
                                'footer_data': footer_data,
                                'news_data': news_data,
-                               'test_var': tiles_data,
+                               'test_var': leftmenu_data,
                                })
 
 

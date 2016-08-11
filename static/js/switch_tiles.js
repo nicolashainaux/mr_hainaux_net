@@ -60,7 +60,7 @@ function displayTiles (event) {
   var tiles_group_id = 'central_' + id
   var leftmenu_active_id = 'leftmenu_' + id
 
-  // console.log('dans displayTiles: ' + '.leftentry.cat_' + cat)
+  console.log('dans displayTiles: ' + leftmenu_active_id)
   var all_leftmenu_entries = document.querySelectorAll('.leftentry.cat_' + cat)
   for (var i = 0; i < all_leftmenu_entries.length; ++i) {
     all_leftmenu_entries[i].classList.remove('active')
