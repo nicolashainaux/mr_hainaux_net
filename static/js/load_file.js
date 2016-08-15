@@ -7,16 +7,34 @@ function registerEvents (event) {
   }
 }
 
+function releaseButtons () {
+  console.log('[releaseButtons]: ' + Date.now())
+  var mmButtons = document.querySelectorAll('.btn-mm')
+  for (var i = 0; i < mmButtons.length; ++i) {
+    mmButtons[i].removeAttribute('disabled')
+  }
+}
+
 function loadFile (event) {
   event.preventDefault()
   // console.log('[loadFile]: this.getAttribute("href") = ' + this.getAttribute('href'))
   // console.log('[loadFile]: event.target = ' + event.target)
   var request = new XMLHttpRequest()
-  var url = this.getAttribute('href')
+  var pressedButton = this
+  // unfocus button:
+  pressedButton.blur()
+  pressedButton.innerHTML = '<img src="/static/pics/colored_moving_blocks40_o.gif" alt="Creation..." height="40" width="40">'
+  // disable all buttons
+  var mmButtons = document.querySelectorAll('.btn-mm')
+  for (var i = 0; i < mmButtons.length; ++i) {
+    mmButtons[i].setAttribute('disabled', 'disabled')
+  }
+  pressedButton.classList.add('unfaded')
+  var url = pressedButton.getAttribute('href')
   // Create a link object that will be used in fact to parse the url
   // in order to get the file name
   var parser = document.createElement('a')
-  parser.href = this.getAttribute('href')
+  parser.href = url
   // var sheetName = parser.pathname.split('/')[2]
   var pdfFileName = parser.pathname.split('/')[3]
   // console.log('[loadFile]: sheetName / pdfFileName = ' + sheetName + ' / ' + pdfFileName)
@@ -35,6 +53,7 @@ function loadFile (event) {
       document.body.appendChild(a)
       a.click()
       document.body.removeChild(a)
+      pressedButton.innerHTML = '<img src="/static/pics/lock.gif" alt="Veuillez patienter..." height="40" width="40">'
       // useless and not working:
       // remove `a` following `Save As` dialog,
       // once `window` regains `focus`
@@ -42,6 +61,13 @@ function loadFile (event) {
       //   document.body.removeChild(a)
       // }
     }
+    // console.log('[loadFile.onload]: début du timeout ' + Date.now())
+    // c'est en millisecondes
+    setTimeout(releaseButtons, 10000)
+    setTimeout(function () {
+      pressedButton.innerHTML = '<img src="/static/pics/colored_blocks40.png" alt="Créer" height="40" width="40">'
+    }, 10000)
+    pressedButton.classList.remove('unfaded')
   }
   request.send()
   return false
