@@ -23,7 +23,7 @@ body {
 }
 .body {
   padding: 10px;
-  padding-bottom: 60px /* Height of the footer */;
+  padding-bottom: 30px /* Height of the footer */;
 }
 body {
 /*background-color #eaeaff*/
@@ -479,7 +479,7 @@ div#central_calcul-mental_ceinture-jaune-2e-trait {
 }
 .footer {
   bottom: 0;
-  height: 60px;
+  height: 30px;
   margin: 0;
   padding: 0;
   position: absolute;
@@ -490,7 +490,9 @@ div#central_calcul-mental_ceinture-jaune-2e-trait {
   padding: 0;
   width: 83.33%;
 }
-.footer_entries {
+.footer-entries {
+  list-style-type: none;
+  display: flex;
   margin: 0;
   padding: 0;
 }
@@ -501,24 +503,8 @@ div#central_calcul-mental_ceinture-jaune-2e-trait {
   padding: 0;
   text-align: center;
 }
-li.footer_entry > a {
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-}
-.nav-pills li.footer_entry a {
-  color: #000080;
-  opacity: 0.5;
-  background-color: rgba(255,255,255,0);
-}
-.nav-pills li.active_footer_entry a,
-.nav-pills li.footer_entry a:hover,
-.nav-pills li.footer_entry a:focus {
-  color: #000080;
-  background-color: rgba(255,255,255,0);
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #000080;
-  opacity: 1;
+li.active_footer_entry.active_footer_entry a {
+  color: #263f9b;
+  text-decoration: underline;
+  text-decoration-color: #263f9b;
 }

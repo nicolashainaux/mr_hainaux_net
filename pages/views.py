@@ -117,6 +117,7 @@ def build(request, category='', theme=''):
                                'category_slug': active_category.slug,
                                'active_theme': active_theme,
                                'tiles_data': tiles_data,
+                               'footer': footer,
                                'footer_data': footer_data,
                                'news_data': news_data,
                                'test_var': leftmenu_data,
