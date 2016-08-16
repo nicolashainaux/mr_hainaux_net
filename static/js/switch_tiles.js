@@ -61,6 +61,16 @@ function displayTiles (event) {
   var id = cat + '_' + thm
   var tiles_group_id = 'central_' + id
   var leftmenu_active_id = 'leftmenu_' + id
+  // console.log('[displayTiles]: ' + this.classList.contains('Ceinturejaune'))
+
+  var mc_navbar_entry = document.querySelector('li.navbar_active_calcul-mental > a')
+  if (this.classList.contains('Ceintureblanche')) {
+    mc_navbar_entry.style.backgroundColor = 'white'
+    mc_navbar_entry.style.color = '#333333'
+  } else if (this.classList.contains('Ceinturejaune')) {
+    mc_navbar_entry.style.backgroundColor = '#ffd42a'
+    mc_navbar_entry.style.color = 'white'
+  }
 
   // console.log('dans displayTiles: ' + leftmenu_active_id)
   var all_leftmenu_entries = document.querySelectorAll('.leftentry.cat_' + cat)
