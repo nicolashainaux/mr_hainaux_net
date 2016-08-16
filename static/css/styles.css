@@ -183,18 +183,17 @@ button.btn-mm.unfaded {
 .nav-pills > li.navbar_active_calcul-mental > a:focus,
 .nav-pills > li.navbar_calcul-mental > a:hover,
 .nav-pills > li.navbar_calcul-mental > a:focus {
+  height: 59px;
   color: #333;
-  background-color: #fff;
-  border-bottom-style: solid;
-  border-bottom-color: #fff;
-  border-bottom-width: 3px;
+  background: #fff url("/static/pics/couleurs_ceintures.png") no-repeat;
+  background-position: 0px 56px;
   transition: all 0.6s ease 0s;
 }
 .nav-pills > li.navbar_calcul-mental > a {
+  height: 59px;
   color: #4d4d4d;
-  border-bottom-style: solid;
-  border-bottom-color: #fff;
-  border-bottom-width: 3px;
+  background: url("/static/pics/couleurs_ceintures.png") no-repeat;
+  background-position: 0px 56px;
   transition: all 0.6s ease 0s;
 }
 .news-panel {
@@ -434,6 +433,22 @@ a.leftentry.cat_calcul-mental[href$="2e-trait"] {
 .leftentry.Ceintureblanche.cat_calcul-mental {
   background: #fff;
   color: #4d4d4d;
+}
+#leftmenu_calcul-mental_ceinture-blanche-1er-trait {
+  background: #fff url("/static/pics/un_trait_jaune.png") no-repeat;
+  background-position: 95% 5%;
+}
+#leftmenu_calcul-mental_ceinture-blanche-2e-trait {
+  background: #fff url("/static/pics/deux_traits_jaunes.png") no-repeat;
+  background-position: 95% 5%;
+}
+#leftmenu_calcul-mental_ceinture-jaune-1er-trait {
+  background: #ffd42a url("/static/pics/un_trait_orange.png") no-repeat;
+  background-position: 95% 5%;
+}
+#leftmenu_calcul-mental_ceinture-jaune-2e-trait {
+  background: #ffd42a url("/static/pics/deux_traits_oranges.png") no-repeat;
+  background-position: 95% 5%;
 }
 .main {
   margin: 0;
