@@ -8,7 +8,7 @@ function registerEvents (event) {
 }
 
 function releaseButtons () {
-  console.log('[releaseButtons]: ' + Date.now())
+  // console.log('[releaseButtons]: ' + Date.now())
   var mmButtons = document.querySelectorAll('.btn-mm')
   for (var i = 0; i < mmButtons.length; ++i) {
     mmButtons[i].removeAttribute('disabled')
