@@ -1,4 +1,5 @@
 import requests
+from django.http import Http404
 from django.shortcuts import render_to_response
 from django.http import HttpResponse
 
@@ -12,6 +13,8 @@ def home(request):
 
 def build(request, category=''):
     # todo: ? check the category does exist
+    if category == 'admin':
+        raise Http404
     category_slug = category
     footer = False
     get_category_object = Category.objects.filter(slug__exact=category_slug)
