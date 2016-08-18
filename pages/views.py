@@ -10,7 +10,7 @@ def home(request):
     return build(request, category='accueil')
 
 
-def build(request, category='', theme=''):
+def build(request, category=''):
     # todo: ? check the category does exist
     category_slug = category
     footer = False
@@ -78,17 +78,6 @@ def build(request, category='', theme=''):
                              category_id=category_object.id)
                          .order_by('order')]
 
-    # todo: ? check the theme does exist
-    theme_slug = theme
-    active_theme = ''
-    # tiles_data = []
-    if theme_slug != '':
-        # todo: check a result at least is returned (otherwise return a 404)
-        theme_object = Theme.objects\
-            .filter(slug__exact=theme_slug)\
-            .filter(category_id=category_object.id)[0]
-        active_theme = theme_object.name
-
     tiles_data = [(thm.slug,
                    [(tile.name, tile.content)
                     for tile in Tile.objects.filter(
@@ -115,7 +104,6 @@ def build(request, category='', theme=''):
                                'active_category': active_category.name,
                                'category_content': active_category.text,
                                'category_slug': active_category.slug,
-                               'active_theme': active_theme,
                                'tiles_data': tiles_data,
                                'footer': footer,
                                'footer_data': footer_data,

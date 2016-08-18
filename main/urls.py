@@ -13,6 +13,8 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
+import socket
+
 from django.conf.urls import url
 from django.contrib import admin
 
@@ -23,6 +25,8 @@ urlpatterns = [
     url(r'^exercice/(?P<sheetname>[\w_-]+)/(?P<filename>[\w_-]+)/$',
         views.sheet),
     url(r'^$', views.home),
-    url(r'^(?P<category>[-\w]+)/$', views.build),
-    url(r'^(?P<category>[-\w]+)/(?P<theme>[-\w]+)/$', views.build)
+    url(r'^(?P<category>[-\w]+)/$', views.build)
 ]
+
+if socket.gethostname() == 'ometeotl':
+    urlpatterns += [url(r'^admin/', admin.site.urls)]
