@@ -26,7 +26,8 @@ SECRET_KEY = '(42fxsyomz8#4)_verwg%^oov+95gybd9)+%t4k)ttdrf0)(7x'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True if socket.gethostname() == 'ometeotl' else False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['mr.hainaux.net'] if socket.gethostname() == 'web0' \
+                                   else ['dev.hainaux.net']
 
 
 # Application definition
@@ -70,7 +71,7 @@ TEMPLATES = [
     },
 ]
 
-TEMPLATE_DEBUG = True
+TEMPLATE_DEBUG = True if socket.gethostname() == 'ometeotl' else False
 
 WSGI_APPLICATION = 'main.wsgi.application'
 
