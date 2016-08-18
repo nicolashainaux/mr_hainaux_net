@@ -34,7 +34,7 @@ function fadeOut (el) {
 
 function fadeIn (el, display) {
   el.style.opacity = 0
-  el.style.display = display || 'block'
+  el.style.display = display || 'flex'
 
   ;(function fade () {
     var val = parseFloat(el.style.opacity)
@@ -113,7 +113,7 @@ function displayCategoryContent (event) {
       all_tiles_groups[i].style.display = 'none'
     }
     document.querySelector('.active.navbar_entry > a').blur()
-    document.getElementById('main_content_' + cat).style.display = 'block'
+    document.getElementById('main_content_' + cat).style.display = 'flex'
     fadeIn(central_content)
   })
   return false
