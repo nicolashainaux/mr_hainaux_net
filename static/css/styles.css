@@ -23,20 +23,27 @@ body {
 }
 .body {
   padding: 10px;
-  padding-bottom: 60px /* Height of the footer */;
+  padding-bottom: 30px /* Height of the footer */;
 }
 body {
 /*background-color #eaeaff*/
-  background-color: #fdfdfd;
+  background-color: #373e48;
   font-family: ubunturegular;
   font-size: 200%;
 /*background-color #4d4d4d*/
-  background-image: url("/static/pics/possible_bg");
-  background-repeat: repeat;
+  background-image: url("/static/pics/bg_blue11.png");
 }
 img {
   max-width: 100%;
   height: auto;
+  vertical-align: top;
+}
+img.belt {
+  width: 100px;
+  height: 39px;
+}
+button.btn-mm.unfaded {
+  opacity: 1;
 }
 .wrapper {
   min-height: 100%;
@@ -66,14 +73,14 @@ img {
   padding: 0;
   margin-bottom: 1%;
   margin-left: 0.28%;
-  display: flex;
 }
 .navbar_entries {
   font-size: 125%;
+  display: flex;
   margin: 0;
   padding: 0;
   margin-left: 16.33%;
-  width: 100%;
+  width: 83.33%;
 }
 .navbar_entry {
   min-width: 16%;
@@ -93,7 +100,7 @@ img {
   transition: all 0.6s ease 0s;
 }
 .nav-pills > li.navbar_accueil > a {
-  color: #4d4d4d;
+  color: #fff;
   border-bottom-style: solid;
   border-bottom-color: #60a8e2;
   border-bottom-width: 3px;
@@ -112,7 +119,7 @@ img {
   transition: all 0.6s ease 0s;
 }
 .nav-pills > li.navbar_6e > a {
-  color: #4d4d4d;
+  color: #fff;
   border-bottom-style: solid;
   border-bottom-color: #ffd42a;
   border-bottom-width: 3px;
@@ -131,7 +138,7 @@ img {
   transition: all 0.6s ease 0s;
 }
 .nav-pills > li.navbar_5e > a {
-  color: #4d4d4d;
+  color: #fff;
   border-bottom-style: solid;
   border-bottom-color: #5aa02c;
   border-bottom-width: 3px;
@@ -150,7 +157,7 @@ img {
   transition: all 0.6s ease 0s;
 }
 .nav-pills > li.navbar_4e > a {
-  color: #4d4d4d;
+  color: #fff;
   border-bottom-style: solid;
   border-bottom-color: #3a57ae;
   border-bottom-width: 3px;
@@ -169,7 +176,7 @@ img {
   transition: all 0.6s ease 0s;
 }
 .nav-pills > li.navbar_3e > a {
-  color: #4d4d4d;
+  color: #fff;
   border-bottom-style: solid;
   border-bottom-color: #d40000;
   border-bottom-width: 3px;
@@ -180,18 +187,17 @@ img {
 .nav-pills > li.navbar_active_calcul-mental > a:focus,
 .nav-pills > li.navbar_calcul-mental > a:hover,
 .nav-pills > li.navbar_calcul-mental > a:focus {
+  height: 59px;
   color: #333;
-  background-color: #fff;
-  border-bottom-style: solid;
-  border-bottom-color: #fff;
-  border-bottom-width: 3px;
+  background: #fff url("/static/pics/couleurs_ceintures.png") no-repeat;
+  background-position: 0px 56px;
   transition: all 0.6s ease 0s;
 }
 .nav-pills > li.navbar_calcul-mental > a {
-  color: #4d4d4d;
-  border-bottom-style: solid;
-  border-bottom-color: #fff;
-  border-bottom-width: 3px;
+  height: 59px;
+  color: #fff;
+  background: url("/static/pics/couleurs_ceintures.png") no-repeat;
+  background-position: 0px 56px;
   transition: all 0.6s ease 0s;
 }
 .news-panel {
@@ -432,9 +438,29 @@ a.leftentry.cat_calcul-mental[href$="2e-trait"] {
   background: #fff;
   color: #4d4d4d;
 }
+#leftmenu_calcul-mental_ceinture-blanche-1er-trait {
+  background: #fff url("/static/pics/un_trait_jaune.png") no-repeat;
+  background-position: 95% 5%;
+}
+#leftmenu_calcul-mental_ceinture-blanche-2e-trait {
+  background: #fff url("/static/pics/deux_traits_jaunes.png") no-repeat;
+  background-position: 95% 5%;
+}
+#leftmenu_calcul-mental_ceinture-jaune-1er-trait {
+  background: #ffd42a url("/static/pics/un_trait_orange.png") no-repeat;
+  background-position: 95% 5%;
+}
+#leftmenu_calcul-mental_ceinture-jaune-2e-trait {
+  background: #ffd42a url("/static/pics/deux_traits_oranges.png") no-repeat;
+  background-position: 95% 5%;
+}
 .main {
   margin: 0;
   padding: 0;
+}
+div.category-content {
+  display: flex;
+  flex-wrap: wrap;
 }
 .tiles_group {
   display: flex;
@@ -444,39 +470,60 @@ a.leftentry.cat_calcul-mental[href$="2e-trait"] {
   padding: 0;
   width: 97.36%;
 }
+.category-tile {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.vcentered-category-tile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.panel-wide {
+  width: 97.5%;
+}
+.panel-half,
+.panel-left-half {
+  width: 48.4%;
+  margin-right: 0.75%;
+}
+.panel-right-half {
+  width: 48.3%;
+  margin-right: 0;
+}
+.panel-third,
+.panel-left-third,
+.panel-central-third {
+  width: 32%;
+  margin-right: 0.75%;
+}
+.panel-right-third {
+  width: 32%;
+  margin-right: 0;
+}
 div#central_content {
   margin: 0;
   padding: 0;
-  display: block;
-}
-div#main_content_accueil,
-div#main_content_calcul-mental,
-div#main_content_6e,
-div#main_content_5e,
-div#main_content_4e,
-div#main_content_3e {
-  display: flex;
-}
-div#central_4e_equations,
-div#central_4e_calcul-litteral,
-div#central_4e_triangle-rectangle,
-div#central_calcul-mental_ceinture-blanche-1er-trait,
-div#central_calcul-mental_ceinture-blanche-2e-trait,
-div#central_calcul-mental_ceinture-jaune,
-div#central_calcul-mental_ceinture-jaune-1er-trait,
-div#central_calcul-mental_ceinture-jaune-2e-trait {
   display: none;
 }
 .tile {
   margin: 0;
   padding: 0;
-  width: 33%;
+  width: 32.75%;
   text-align: center;
   margin-bottom: 10px;
+  margin-right: 0;
+}
+.tile-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 .footer {
   bottom: 0;
-  height: 60px;
+  height: 30px;
   margin: 0;
   padding: 0;
   position: absolute;
@@ -487,35 +534,21 @@ div#central_calcul-mental_ceinture-jaune-2e-trait {
   padding: 0;
   width: 83.33%;
 }
-.footer_entries {
+.footer-entries {
+  list-style-type: none;
+  display: flex;
   margin: 0;
   padding: 0;
 }
 .footer_entry {
   font-size: 83%;
   margin: 0;
-  min-width: 10%;
+  min-width: 20%;
   padding: 0;
   text-align: center;
 }
-li.footer_entry > a {
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-}
-.nav-pills li.footer_entry a {
-  color: #000080;
-  opacity: 0.5;
-  background-color: rgba(255,255,255,0);
-}
-.nav-pills li.active_footer_entry a,
-.nav-pills li.footer_entry a:hover,
-.nav-pills li.footer_entry a:focus {
-  color: #000080;
-  background-color: rgba(255,255,255,0);
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #000080;
-  opacity: 1;
+li.active_footer_entry.active_footer_entry a {
+  color: #263f9b;
+  text-decoration: underline;
+  text-decoration-color: #263f9b;
 }

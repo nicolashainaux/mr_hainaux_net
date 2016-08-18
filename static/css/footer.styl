@@ -3,7 +3,7 @@ $navy = #000080
 
 .footer
   bottom 0
-  height 60px // Height of the footer
+  height 30px // Height of the footer
   margin 0
   padding 0
   position absolute
@@ -14,36 +14,20 @@ $navy = #000080
   padding 0
   width 83.33%
 
-.footer_entries
+.footer-entries
+  list-style-type none
+  display flex
   margin 0
   padding 0
 
 .footer_entry
   font-size 83%
   margin 0
-  min-width 10%
+  min-width 20%
   padding 0
   text-align center
 
-li.footer_entry > a
-  border-top-left-radius 0
-  border-top-right-radius 0
-  border-bottom-left-radius 0
-  border-bottom-right-radius 0
-
-.nav-pills li.footer_entry a
-  color $navy
-  opacity 0.5
-  background-color rgba(255, 255, 255, 0)
-  // transition all 0.6s ease 0s
-
-.nav-pills li.active_footer_entry a
-.nav-pills li.footer_entry a:hover
-.nav-pills li.footer_entry a:focus
-  color $navy
-  // background-color #60a8e2
-  background-color rgba(255, 255, 255, 0)
-  border-bottom-style solid
-  border-bottom-width 2px
-  border-bottom-color $navy
-  opacity 1
+li.active_footer_entry.active_footer_entry a
+  color $midnight-blue
+  text-decoration underline
+  text-decoration-color $midnight-blue

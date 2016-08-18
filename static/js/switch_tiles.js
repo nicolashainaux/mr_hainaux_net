@@ -34,7 +34,7 @@ function fadeOut (el) {
 
 function fadeIn (el, display) {
   el.style.opacity = 0
-  el.style.display = display || 'block'
+  el.style.display = display || 'flex'
 
   ;(function fade () {
     var val = parseFloat(el.style.opacity)
@@ -50,17 +50,29 @@ function fadeIn (el, display) {
 function displayTiles (event) {
   // console.log('dans displayTiles: ' + id)
   event.preventDefault()
+  // Create a link object that will be used in fact to parse the url
   var parser = document.createElement('a')
   var central_content = document.getElementById('central_content')
   var all_tiles_groups = document.getElementsByClassName('tiles_group')
+  // "this" being an anchor (<a></a>), it has a href attribute
   parser.href = this.href
   var cat = parser.pathname.split('/')[1]
   var thm = parser.pathname.split('/')[2]
   var id = cat + '_' + thm
   var tiles_group_id = 'central_' + id
   var leftmenu_active_id = 'leftmenu_' + id
+  // console.log('[displayTiles]: ' + this.classList.contains('Ceinturejaune'))
 
-  console.log('dans displayTiles: ' + leftmenu_active_id)
+  var mc_navbar_entry = document.querySelector('li.navbar_active_calcul-mental > a')
+  if (this.classList.contains('Ceintureblanche')) {
+    mc_navbar_entry.style.backgroundColor = 'white'
+    mc_navbar_entry.style.color = '#333333'
+  } else if (this.classList.contains('Ceinturejaune')) {
+    mc_navbar_entry.style.backgroundColor = '#ffd42a'
+    mc_navbar_entry.style.color = 'white'
+  }
+
+  // console.log('dans displayTiles: ' + leftmenu_active_id)
   var all_leftmenu_entries = document.querySelectorAll('.leftentry.cat_' + cat)
   for (var i = 0; i < all_leftmenu_entries.length; ++i) {
     all_leftmenu_entries[i].classList.remove('active')
@@ -101,7 +113,7 @@ function displayCategoryContent (event) {
       all_tiles_groups[i].style.display = 'none'
     }
     document.querySelector('.active.navbar_entry > a').blur()
-    document.getElementById('main_content_' + cat).style.display = 'block'
+    document.getElementById('main_content_' + cat).style.display = 'flex'
     fadeIn(central_content)
   })
   return false
