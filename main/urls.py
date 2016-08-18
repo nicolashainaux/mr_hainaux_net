@@ -24,5 +24,5 @@ urlpatterns = [
         views.sheet),
     url(r'^$', views.home),
     url(r'^(?P<category>[-\w]+)/$', views.build),
-    url(r'^(?P<category>[-\w]+)/(?P<theme>[-\w]+)/$', views.build)
+    # url(r'^(?P<category>[-\w]+)/(?P<theme>[-\w]+)/$', views.build)
 ]
