@@ -24,8 +24,29 @@
 <div class="panel panel-default" style="padding: 0; margin: 20px; width: 95%;">
   <div class="panel-body">
     <p>
-      Si aucune de ces possibilités ne vous convient, je suis désolé mais pas en mesure actuellement de vous faire accéder au contenu de ce site.
+      Si aucune de ces possibilités ne vous convient, je suis désolé mais je ne suis actuellement pas en mesure de vous faire accéder au contenu de ce site.
     </p>
+  </div>
+</div>
+{% endblock %}
+
+{% block deprecated-browser %}
+<div class="col-md-12">
+  <div class="panel panel-default" style="padding: 0; margin: 10px; width: 97.5%;">
+    <div class="panel-body" style="background: #ffd5d5; color: #aa0000">
+      <p>
+        <img src="/static/pics/warning.svg" height="30px" width="30px">
+        Votre navigateur ne supporte pas certaines fonctionalités nécessaires au bon fonctionnement du site.
+      <p>
+      </p>
+        Vous devriez le mettre à jour, ou en changer.
+      <p>
+      </p>
+        (les navigateurs qui devraient fonctionner sont Firefox >= 44, Chrome >= 36, Opera >= 23.
+        Edge >= 13 devrait fonctionner malgré un possible problème d'affichage des polices.
+        Internet Explorer est obsolète).
+      </p>
+    </div>
   </div>
 </div>
 {% endblock %}
