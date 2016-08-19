@@ -14,11 +14,11 @@
     <div id="no-js">
       {% block no-javascript %}{% endblock %}
     </div>
-    <div id="deprecated-browser-warning">
-      {% block deprecated-browser %}{% endblock %}
-    </div>
     <div class="wrapper">
       <div class="body">
+        <div id="deprecated-browser-warning">
+          {% block deprecated-browser %}{% endblock %}
+        </div>
         <div class="row">
           {% block navigation %}{% endblock %}
         </div>

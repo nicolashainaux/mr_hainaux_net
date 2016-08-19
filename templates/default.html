@@ -31,21 +31,27 @@
 {% endblock %}
 
 {% block deprecated-browser %}
-<div class="col-md-12">
-  <div class="panel panel-default" style="padding: 0; margin: 10px; width: 97.5%;">
-    <div class="panel-body" style="background: #ffd5d5; color: #aa0000">
-      <p>
-        <img src="/static/pics/warning.svg" height="30px" width="30px">
-        Votre navigateur ne supporte pas certaines fonctionalités nécessaires au bon fonctionnement du site.
-      <p>
-      </p>
-        Vous devriez le mettre à jour, ou en changer.
-      <p>
-      </p>
-        (les navigateurs qui devraient fonctionner sont Firefox >= 44, Chrome >= 36, Opera >= 23.
-        Edge >= 13 devrait fonctionner malgré un possible problème d'affichage des polices.
-        Internet Explorer est obsolète).
-      </p>
+<div class="row">
+  <div class="col-md-12">
+    <div class="panel panel-default" style="padding: 0; margin: 0; margin-bottom:10px; width: 100%;">
+      <div class="panel-body" style="background: #ffd5d5; color: #aa0000">
+        <p>
+          <img src="/static/pics/warning.svg" height="30px" width="30px">
+          Votre navigateur ne supporte pas certaines fonctionalités nécessaires à l'affichage ou au bon fonctionnement du site.
+        </p>
+        <p>
+          Vous devriez le mettre à jour, ou en changer.
+        </p>
+        <p>
+          Les navigateurs qui devraient fonctionner sont <a href="https://www.mozilla.org/fr/firefox/new/">Firefox >= 44</a>,
+          <a href="https://www.google.fr/chrome/browser/desktop/index.html">Chrome >= 36</a>
+          et <a href="http://www.opera.com/fr/download">Opera >= 23</a>.
+        </p>
+        <p>
+          <a href="https://www.microsoft.com/fr-FR/windows/microsoft-edge">Edge >= 13</a> devrait fonctionner malgré un possible problème d'affichage des polices.
+          Internet Explorer est obsolète.
+        </p>
+      </div>
     </div>
   </div>
 </div>
