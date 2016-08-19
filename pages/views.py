@@ -37,7 +37,10 @@ def build(request, category=''):
     navbar_links[0] = "/"
     navbar_entries = [o.name
                       for o in Category.objects.all().order_by('order')]
-    navbar_data = zip(navbar_slugs, navbar_links, navbar_entries)
+    navbar_html_entries = [o.html_name
+                           for o in Category.objects.all().order_by('order')]
+    navbar_data = zip(navbar_slugs, navbar_links, navbar_entries,
+                      navbar_html_entries)
 
     footer_links = [o.slug
                     for o in FooterCategory.objects.all().order_by('order')]
@@ -59,7 +62,8 @@ def build(request, category=''):
             leftmenu_infos = [('/' + thm.category.slug + '/' + thm.slug,
                                thm.slug,
                                thm.name,
-                               ' '.join(thm.name.split()[-2:]))
+                               ' '.join(thm.name.split()[-2:]),
+                               thm.html_name)
                               for thm in Theme.objects.filter(
                                   category_id=category_object.id)
                               .order_by('order')
@@ -72,7 +76,8 @@ def build(request, category=''):
         leftmenu_data = [(active_category.slug,
                           thm.slug,
                           '/' + active_category.slug + '/' + thm.slug,
-                          thm.name)
+                          thm.name,
+                          thm.html_name)
                          for thm in Theme.objects.filter(
                              category_id=category_object.id)
                          .order_by('order')]
@@ -90,6 +95,7 @@ def build(request, category=''):
     if active_category.slug == 'accueil':
         news_data = [('-'.join(str(o.date).split(sep='-')[::-1]),
                       o.title,
+                      o.html_title,
                       o.content)
                      for o in News.objects.all().order_by('date')][::-1]
 

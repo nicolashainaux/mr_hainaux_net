@@ -6,6 +6,7 @@ class Category(models.Model):
         verbose_name_plural = "categories"
     order = models.PositiveSmallIntegerField()
     name = models.CharField(max_length=100)
+    html_name = models.CharField(max_length=100, default='unset')
     slug = models.SlugField(max_length=100, default='unset')
     text = models.TextField()
 
@@ -18,6 +19,7 @@ class FooterCategory(models.Model):
         verbose_name_plural = "footer categories"
     order = models.PositiveSmallIntegerField()
     name = models.CharField(max_length=100)
+    html_name = models.CharField(max_length=100, default='unset')
     slug = models.SlugField(max_length=100, default='unset')
     text = models.TextField()
 
@@ -28,6 +30,7 @@ class FooterCategory(models.Model):
 class Theme(models.Model):
     order = models.PositiveSmallIntegerField()
     name = models.CharField(max_length=100)
+    html_name = models.CharField(max_length=100, default='unset')
     slug = models.SlugField(max_length=100, default='unset')
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
 
@@ -38,8 +41,9 @@ class Theme(models.Model):
 class News(models.Model):
     class Meta:
         verbose_name_plural = "news"
-    date = models.DateField(auto_now=True)
+    date = models.DateField(auto_now_add=True)
     title = models.CharField(max_length=100)
+    html_title = models.CharField(max_length=100, default='unset')
     content = models.TextField(blank=True)
 
     def __str__(self):
@@ -49,6 +53,7 @@ class News(models.Model):
 class Tile(models.Model):
     order = models.PositiveSmallIntegerField()
     name = models.CharField(max_length=100)
+    html_name = models.CharField(max_length=100, default='unset')
     theme = models.ForeignKey(Theme, on_delete=models.CASCADE)
     content = models.TextField()
 

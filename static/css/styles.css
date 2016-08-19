@@ -41,6 +41,9 @@ img.belt {
   width: 100px;
   height: 39px;
 }
+p.kept-away-from-left {
+  padding-left: 10px;
+}
 button.btn-mm.unfaded {
   opacity: 1;
 }
@@ -73,9 +76,19 @@ button.btn-mm.unfaded {
   margin-bottom: 1%;
   margin-left: 0.28%;
 }
+@media screen and (max-width: 1350px) {
+  .navbar_entries {
+    font-size: 115%;
+  }
+}
+@media screen and (min-width: 1351px) {
+  .navbar_entries {
+    font-size: 125%;
+  }
+}
 .navbar_entries {
-  font-size: 125%;
   display: flex;
+  flex-wrap: wrap;
   margin: 0;
   padding: 0;
   margin-left: 16.33%;
@@ -186,18 +199,21 @@ button.btn-mm.unfaded {
 .nav-pills > li.navbar_active_calcul-mental > a:focus,
 .nav-pills > li.navbar_calcul-mental > a:hover,
 .nav-pills > li.navbar_calcul-mental > a:focus {
-  height: 59px;
   color: #333;
-  background: #fff url("/static/pics/couleurs_ceintures.png") no-repeat;
-  background-position: 0px 56px;
+  border-bottom-style: solid;
+  border-bottom-width: 3px;
+  border-image: url("/static/pics/couleurs_ceintures_ext.png");
+  border-image-slice: 3;
+  background: #fff;
   transition: all 0.6s ease 0s;
 }
 .nav-pills > li.navbar_calcul-mental > a {
-  height: 59px;
   color: #fff;
-  background: url("/static/pics/couleurs_ceintures.png") no-repeat;
-  background-position: 0px 56px;
   transition: all 0.6s ease 0s;
+  border-bottom-style: solid;
+  border-bottom-width: 3px;
+  border-image: url("/static/pics/couleurs_ceintures_ext.png");
+  border-image-slice: 3;
 }
 .news-panel {
   border-radius: 0;
@@ -215,7 +231,7 @@ button.btn-mm.unfaded {
 .news-title {
   color: #fff;
   background-color: #60a8e2;
-  height: 42px;
+  height: 100%;
 }
 .news-main-title {
   font-size: 125%;
@@ -471,7 +487,7 @@ div.category-content {
 }
 .category-tile {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: flex-start;
 }
 .vcentered-category-tile {

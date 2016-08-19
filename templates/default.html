@@ -3,16 +3,19 @@
 {% block navigation %}
 <div class="col-md-12 navbar_row" role="navigation">
   <ul class="nav nav-pills navbar_entries">
-    {% for slug, link, entry in navbar_data %}
+    {% for slug, link, entry, html_entry in navbar_data %}
       {% if active_category == entry %}
         <li role="presentation" class="active navbar_entry navbar_active_{{ slug }}">
-          <a href="{{ link }}">{{ entry }}</a>
-        </li>
       {% else %}
         <li role="presentation" class="navbar_entry navbar_{{ slug }}">
-          <a href="{{ link }}">{{ entry }}</a>
-        </li>
       {% endif %}
+          {% if html_entry == 'unset' %}
+          <a href="{{ link }}">{{ entry }}</a>
+          {% else %}
+          <a href="{{ link }}">{{ html_entry|safe }}</a>
+          {% endif %}
+        </li>
+
     {% endfor %}
   </ul>
 </div>
@@ -20,14 +23,22 @@
 
 {% block leftmenu %}
   <ul class="nav nav-pills nav-stacked">
-    {% for cat_slug, thm_slug, link, entry in leftmenu_data %}
+    {% for cat_slug, thm_slug, link, entry, html_entry in leftmenu_data %}
       {% if active_theme == entry %}
         <li role="presentation" class="active">
+          {% if html_entry == 'unset' %}
           <a class="leftentry cat_{{ cat_slug }} active" id="leftmenu_{{ cat_slug }}_{{ thm_slug }}" href="{{ link }}">{{ entry }}</a>
+          {% else %}
+          <a class="leftentry cat_{{ cat_slug }} active" id="leftmenu_{{ cat_slug }}_{{ thm_slug }}" href="{{ link }}">{{ html_entry|safe }}</a>
+          {% endif %}
         </li>
       {% else %}
         <li role="presentation">
+          {% if html_entry == 'unset' %}
           <a class="leftentry cat_{{ cat_slug }}" id="leftmenu_{{ cat_slug }}_{{ thm_slug }}" href="{{ link }}">{{ entry }}</a>
+          {% else %}
+          <a class="leftentry cat_{{ cat_slug }}" id="leftmenu_{{ cat_slug }}_{{ thm_slug }}" href="{{ link }}">{{ html_entry|safe }}</a>
+          {% endif %}
         </li>
       {% endif %}
     {% endfor %}

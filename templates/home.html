@@ -6,14 +6,18 @@
       <h3 class="panel-title news-title news-main-title">Nouveautés</h3>
     </div>
   </div>
-  {% for news_date, news_title, news_content in news_data %}
+  {% for news_date, news_title, news_html_title, news_content in news_data %}
     <div class="panel panel-default news-panel">
       <div class="panel-heading news-heading">
-        <h3 class="panel-title news-title news-small-title">{{ news_date}}: {{ news_title }}</h3>
+        {% if news_html_title == 'unset' %}
+        <h3 class="panel-title news-title news-small-title">{{ news_date }} {{ news_title }}</h3>
+        {% else %}
+        <h3 class="panel-title news-title news-small-title">{{ news_date }} {{ news_html_title|safe }}</h3>
+        {% endif %}
       </div>
       {% if news_content != '' %}
         <div class="panel-body news-body">
-          {{ news_content }}
+          {{ news_content|safe }}
         </div>
       {% endif %}
     </div>
