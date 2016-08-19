@@ -1,5 +1,35 @@
 {% extends 'layout.html' %}
 
+{% block no-javascript %}
+<div class="panel panel-default" style="padding: 0; margin: 20px; width: 95%;">
+  <div class="panel-body">
+    <p><b>Désolé...</b></p>
+    <p>Ce site a besoin d'un peu de <a href="https://support.mozilla.org/fr/kb/parametres-javascript-pages-interactives#w_quest-ce-que-javascript">javascript</a> pour fonctionner et cette fonctionnalité
+    est désactivée dans votre navigateur.</p>
+    <p>Le temps de développement supplémentaire pour rendre le site accessible correctement sans javascript
+      est trop long, je n'ai pas eu le temps de le faire et ne sais pas quand ce sera le cas.</p>
+  </div>
+</div>
+
+<div class="panel panel-default" style="padding: 0; margin: 20px; width: 95%;">
+  <div class="panel-body">
+    <p>Pour remédier à cette situation et vous permettre d'accéder au contenu, il y a actuellement deux possibilités :
+      <ul>
+        <li>Vous pouvez simplement <a href="http://www.enable-javascript.com/fr/">activer javascript</a>.</li>
+        <li>Vous améliorez vous-mêmes le code du site. Consulter <a href="https://github.com/nicolashainaux/mathmaker">cette page</a> pour me contacter.</li>
+      </ul>
+    </p>
+  </div>
+</div>
+<div class="panel panel-default" style="padding: 0; margin: 20px; width: 95%;">
+  <div class="panel-body">
+    <p>
+      Si aucune de ces possibilités ne vous convient, je suis désolé mais pas en mesure actuellement de vous faire accéder au contenu de ce site.
+    </p>
+  </div>
+</div>
+{% endblock %}
+
 {% block navigation %}
 <div class="col-md-12 navbar_row" role="navigation">
   <ul class="nav nav-pills navbar_entries">
