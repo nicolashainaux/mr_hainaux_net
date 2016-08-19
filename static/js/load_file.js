@@ -13,10 +13,21 @@ function releaseButtons () {
   for (var i = 0; i < mmButtons.length; ++i) {
     mmButtons[i].removeAttribute('disabled')
   }
+  var msg = document.querySelector('#failed-creation')
+  if (typeof msg !== 'undefined') {
+    msg.parentNode.removeChild(msg)
+  }
+  var pressedButton = document.querySelector('.unfaded')
+  if (typeof pressedButton !== 'undefined') {
+    pressedButton.innerHTML = '<img src="/static/pics/colored_blocks40.png" alt="Créer" height="40" width="40">'
+    pressedButton.classList.remove('unfaded')
+    // pressedButton.removeAttribute('disabled')
+  }
 }
 
 function loadFile (event) {
   event.preventDefault()
+  var lockDuration = 10000
   // console.log('[loadFile]: this.getAttribute("href") = ' + this.getAttribute('href'))
   // console.log('[loadFile]: event.target = ' + event.target)
   var request = new XMLHttpRequest()
@@ -60,13 +71,18 @@ function loadFile (event) {
       // window.onfocus = function () {
       //   document.body.removeChild(a)
       // }
+    } else {
+      var tileBody = pressedButton.parentNode.parentNode
+      pressedButton.innerHTML = '<img src="/static/pics/lock.gif" alt="Veuillez patienter..." height="40" width="40">'
+      tileBody.innerHTML += '<div  id="failed-creation" class="panel panel-default" style="padding: 0; margin: 0; width: 100%;"><div class="panel-body" style="background: #ffd5d5; color: #aa0000">Désolé, un problème est survenu, la feuille n\'a pas été créée. Les boutons vont redevenir disponibles dans quelques secondes. Si le problème persiste, <a href="/contact/">contactez M. Hainaux</a> !</div></div>'
+      lockDuration = 15000
     }
     // console.log('[loadFile.onload]: début du timeout ' + Date.now())
     // c'est en millisecondes
-    setTimeout(releaseButtons, 10000)
     setTimeout(function () {
       pressedButton.innerHTML = '<img src="/static/pics/colored_blocks40.png" alt="Créer" height="40" width="40">'
-    }, 10000)
+    }, lockDuration)
+    setTimeout(releaseButtons, lockDuration)
     pressedButton.classList.remove('unfaded')
   }
   request.send()
