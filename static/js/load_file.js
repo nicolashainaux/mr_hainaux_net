@@ -51,6 +51,7 @@ function loadFile (event) {
   // console.log('[loadFile]: sheetName / pdfFileName = ' + sheetName + ' / ' + pdfFileName)
   request.open('GET', url, true)
   request.responseType = 'blob'
+  var tileBody = pressedButton.parentNode.parentNode
   request.onload = function () {
     // console.log('[loadFile.onload]: this.status = ' + this.status)
     if (this.status === 200) {
@@ -71,8 +72,11 @@ function loadFile (event) {
       // window.onfocus = function () {
       //   document.body.removeChild(a)
       // }
+    } else if (this.status === 429) {
+      pressedButton.innerHTML = '<img src="/static/pics/lock.gif" alt="Veuillez patienter..." height="40" width="40">'
+      tileBody.innerHTML += '<div  id="failed-creation" class="panel panel-default" style="padding: 0; margin: 0; width: 100%;"><div class="panel-body" style="background: #ffe6d5; color: #d45500">Désolé, il faut patienter une dizaine de secondes entre deux créations de documents.</div></div>'
+      lockDuration = 15000
     } else {
-      var tileBody = pressedButton.parentNode.parentNode
       pressedButton.innerHTML = '<img src="/static/pics/lock.gif" alt="Veuillez patienter..." height="40" width="40">'
       tileBody.innerHTML += '<div  id="failed-creation" class="panel panel-default" style="padding: 0; margin: 0; width: 100%;"><div class="panel-body" style="background: #ffd5d5; color: #aa0000">Désolé, un problème est survenu, la feuille n\'a pas été créée. Les boutons vont redevenir disponibles dans quelques secondes. Si le problème persiste, <a href="/contact/">contactez M. Hainaux</a> !</div></div>'
       lockDuration = 15000

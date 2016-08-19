@@ -120,7 +120,7 @@ def build(request, category=''):
 def sheet(request, sheetname='', filename=''):
     r = requests.get('http://127.0.0.1:9999',
                      params={'sheetname': sheetname,
-                             # 'ip': get_client_ip(request)
+                             'ip': get_client_ip(request)
                              })
     if r.status_code == 200:
         response = HttpResponse(r.content,
