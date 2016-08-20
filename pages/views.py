@@ -1,3 +1,5 @@
+import socket
+
 import requests
 from django.http import Http404
 from django.shortcuts import render_to_response
@@ -102,6 +104,10 @@ def build(request, category=''):
     alternate_templates = {'accueil': 'home.html',
                            'calcul-mental': 'mental_calculation.html'}
 
+    page_title = {'ometeotl': 'local.hainaux.net',
+                  'dev_web0': 'dev.hainaux.net',
+                  'web0': 'mr.hainaux.net'}
+
     return render_to_response(alternate_templates.get(active_category.slug,
                                                       'default.html'),
                               {'navbar_data': navbar_data,
@@ -113,6 +119,7 @@ def build(request, category=''):
                                'footer': footer,
                                'footer_data': footer_data,
                                'news_data': news_data,
+                               'page_title': page_title[socket.gethostname()],
                                'test_var': leftmenu_data,
                                })
 
