@@ -14,11 +14,11 @@ function releaseButtons () {
     mmButtons[i].removeAttribute('disabled')
   }
   var msg = document.querySelector('#failed-creation')
-  if (typeof msg !== 'undefined') {
+  if ((typeof msg !== 'undefined') && (msg !== null)) {
     msg.parentNode.removeChild(msg)
   }
   var pressedButton = document.querySelector('.unfaded')
-  if (typeof pressedButton !== 'undefined') {
+  if (typeof pressedButton !== 'undefined' && (pressedButton !== null)) {
     pressedButton.innerHTML = '<img src="/static/pics/colored_blocks40.png" alt="Créer" height="40" width="40">'
     pressedButton.classList.remove('unfaded')
     // pressedButton.removeAttribute('disabled')
@@ -42,6 +42,24 @@ function loadFile (event) {
   }
   pressedButton.classList.add('unfaded')
   var url = pressedButton.getAttribute('href')
+  if (pressedButton.hasAttribute('radio_id')) {
+    // console.log('radio_id trouvé')
+    var f = document.getElementById(pressedButton.getAttribute('radio_id'))
+    var radioButtons = f.children
+    for (var j = 0; j < radioButtons.length; ++j) {
+      if (radioButtons[j].tagName === 'INPUT') {
+        if (!radioButtons[j].hasAttribute('value')) {
+          console.log('Found an <input> without value!')
+        } else {
+          // console.log(radioButtons[j].tagName + ': ' + radioButtons[j].value + ' >>> ' + radioButtons[j].checked)
+          if (radioButtons[j].checked) {
+            url = radioButtons[j].value
+            // console.log('Changed url')
+          }
+        }
+      }
+    }
+  }
   // Create a link object that will be used in fact to parse the url
   // in order to get the file name
   var parser = document.createElement('a')
