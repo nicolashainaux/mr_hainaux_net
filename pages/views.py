@@ -104,7 +104,7 @@ def build(request, category=''):
     alternate_templates = {'accueil': 'home.html',
                            'calcul-mental': 'mental_calculation.html'}
 
-    page_title = {'ometeotl': 'local.hainaux.net',
+    page_title = {'tepeyollotl': 'local.hainaux.net',
                   'dev_web0': 'dev.hainaux.net',
                   'web0': 'mr.hainaux.net'}
 
