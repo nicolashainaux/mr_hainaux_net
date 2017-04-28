@@ -27,7 +27,7 @@ SECRET_KEY = '(42fxsyomz8#4)_verwg%^oov+95gybd9)+%t4k)ttdrf0)(7x'
 DEBUG = True if socket.gethostname() == 'tepeyollotl' else False
 
 ALLOWED_HOSTS = ['mr.hainaux.net'] if socket.gethostname() == 'web0' \
-                                   else ['dev.hainaux.net']
+                                   else ['dev.hainaux.net', '127.0.0.1']
 
 
 # Application definition
