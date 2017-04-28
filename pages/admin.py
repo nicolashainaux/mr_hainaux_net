@@ -14,6 +14,7 @@ class FooterCategoryAdmin(admin.ModelAdmin):
 class ThemeAdmin(admin.ModelAdmin):
     prepopulated_fields = {"slug": ("name",)}
 
+
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(FooterCategory, FooterCategoryAdmin)
 admin.site.register(Theme, ThemeAdmin)
