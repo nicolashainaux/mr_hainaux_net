@@ -71,7 +71,7 @@ TEMPLATES = [
     },
 ]
 
-TEMPLATE_DEBUG = True if socket.gethostname() == 'ometeotl' else False
+TEMPLATE_DEBUG = True if socket.gethostname() == 'tepeyollotl' else False
 
 WSGI_APPLICATION = 'main.wsgi.application'
 
