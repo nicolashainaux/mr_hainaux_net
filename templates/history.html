@@ -1,0 +1,29 @@
+{% extends 'default.html' %}
+
+{% block main_content %}
+  <div class="category-content" id="main_content_{{ category_slug }}">
+    {{ category_content|safe }}
+  </div>
+  <div class="tiles_group">
+  {% for news_date, news_title, news_html_title, news_content in news_data %}
+    {% if forloop.counter|divisibleby:5  %}
+    <div class="panel panel-default panel-right-fifth">
+    {% else %}
+    <div class="panel panel-default panel-fifth">
+    {% endif %}
+      <div class="panel-heading news-heading">
+        {% if news_html_title == 'unset' %}
+        <h3 class="panel-title news-title news-small-title">{{ news_date }} {{ news_title }}</h3>
+        {% else %}
+        <h3 class="panel-title news-title news-small-title">{{ news_date }} {{ news_html_title|safe }}</h3>
+        {% endif %}
+      </div>
+      {% if news_content != '' %}
+        <div class="panel-body news-body-borderless">
+          {{ news_content|safe }}
+        </div>
+      {% endif %}
+    </div>
+  {% endfor %}
+  </div>
+{% endblock %}

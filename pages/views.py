@@ -94,7 +94,7 @@ def build(request, category=''):
                   .order_by('order')]
 
     news_data = []
-    if active_category.slug == 'accueil':
+    if active_category.slug in ['accueil', 'historique']:
         news_data = [('-'.join(str(o.date).split(sep='-')[::-1]),
                       o.title,
                       o.html_title,
@@ -102,6 +102,7 @@ def build(request, category=''):
                      for o in News.objects.all().order_by('date')][::-1]
 
     alternate_templates = {'accueil': 'home.html',
+                           'historique': 'history.html',
                            'calcul-mental': 'mental_calculation.html'}
 
     page_title = {'tepeyollotl': 'local.hainaux.net',

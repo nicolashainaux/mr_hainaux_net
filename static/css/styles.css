@@ -251,6 +251,11 @@ button.btn-mm.unfaded {
   border-style: solid;
   padding: 5px;
 }
+.news-body-borderless {
+  font-size: 75%;
+  border-width: 0;
+  padding: 5px;
+}
 .leftmenu_col {
   padding-right: 0.75%;
   padding-left: 0.75%;
@@ -518,6 +523,17 @@ div.category-content {
   width: 32%;
   margin-right: 0;
 }
+
+.panel-fifth {
+  width: 19%;
+  margin-right: 0.75%;
+}
+
+.panel-right-fifth{
+  width: 19%;
+  margin-right: 0;
+}
+
 div#central_content {
   margin: 0;
   padding: 0;
