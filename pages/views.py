@@ -105,6 +105,7 @@ def build(request, category=''):
                            'calcul-mental': 'mental_calculation.html'}
 
     page_title = {'tepeyollotl': 'local.hainaux.net',
+                  'ometeotl': 'local.hainaux.net',
                   'dev_web0': 'dev.hainaux.net',
                   'web0': 'mr.hainaux.net'}
 

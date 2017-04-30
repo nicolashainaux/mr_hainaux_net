@@ -26,7 +26,7 @@ urlpatterns = [
         views.sheet),
     url(r'^$', views.home),
     url(r'^(?P<category>[-\w]+)/$', views.build)
-] if socket.gethostname() == 'tepeyollotl' \
+] if socket.gethostname() in ['tepeyollotl', 'ometeotl'] \
   else[
     url(r'^exercice/(?P<sheetname>[\w_-]+)/(?P<filename>[\w_-]+)/$',
         views.sheet),
