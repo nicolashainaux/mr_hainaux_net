@@ -333,6 +333,11 @@ button.btn-mm.unfaded {
 .main {
   color: #333;
 }
+.bottom-link {
+  font-size: 75%;
+  padding-right: 30%;
+  padding-left: 30%;
+}
 label {
   font-weight: normal;
 }
