@@ -42,6 +42,7 @@ class News(models.Model):
     class Meta:
         verbose_name_plural = "news"
     date = models.DateField(auto_now_add=True)
+    published_on_home_page = models.BooleanField(default=True)
     title = models.CharField(max_length=100)
     html_title = models.CharField(max_length=100, default='unset')
     content = models.TextField(blank=True)

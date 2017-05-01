@@ -94,12 +94,19 @@ def build(request, category=''):
                   .order_by('order')]
 
     news_data = []
-    if active_category.slug in ['accueil', 'historique']:
+    if active_category.slug == 'historique':
         news_data = [('-'.join(str(o.date).split(sep='-')[::-1]),
                       o.title,
                       o.html_title,
                       o.content)
                      for o in News.objects.all().order_by('date')][::-1]
+    elif active_category.slug == 'accueil':
+        news_data = [('-'.join(str(o.date).split(sep='-')[::-1]),
+                      o.title,
+                      o.html_title,
+                      o.content)
+                     for o in News.objects.all().order_by('date')
+                     if o.published_on_home_page][::-1]
 
     alternate_templates = {'accueil': 'home.html',
                            'historique': 'history.html',
