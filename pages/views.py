@@ -87,8 +87,9 @@ def build(request, category=''):
     tiles_data = [(thm.slug,
                    [(tile.name, tile.content)
                     for tile in Tile.objects.filter(
-                        theme_id=thm.id)
-                    .order_by('order')])
+                        theme_id=thm.id).order_by('order')
+                    if tile.published
+                    ])
                   for thm in Theme.objects.filter(
                       category_id=active_category.id)
                   .order_by('order')]

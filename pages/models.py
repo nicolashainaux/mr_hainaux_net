@@ -56,6 +56,7 @@ class Tile(models.Model):
     name = models.CharField(max_length=100)
     html_name = models.CharField(max_length=100, default='unset')
     theme = models.ForeignKey(Theme, on_delete=models.CASCADE)
+    published = models.BooleanField(default=True)
     content = models.TextField()
 
     def __str__(self):
