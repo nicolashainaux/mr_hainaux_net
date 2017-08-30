@@ -55,6 +55,9 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'main.urls'
 
+DEBUG = True \
+    if socket.gethostname() in ['tepeyollotl', 'ometeotl'] else False
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -67,12 +70,10 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
+            'debug': DEBUG,
         },
     },
 ]
-
-TEMPLATE_DEBUG = True \
-    if socket.gethostname() in ['tepeyollotl', 'ometeotl'] else False
 
 WSGI_APPLICATION = 'main.wsgi.application'
 
