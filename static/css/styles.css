@@ -73,6 +73,8 @@ button.btn-mm.unfaded {
   margin-top: 150px;
 }
 .navbar_row {
+  display: flex;
+  flex-wrap: wrap;
   padding: 0;
   margin-bottom: 1%;
   margin-left: 0.28%;
@@ -88,11 +90,12 @@ button.btn-mm.unfaded {
   }
 }
 .navbar_entries {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   margin: 0;
   padding: 0;
-  margin-left: 16.33%;
+  left: 16.33%;
   width: 83.33%;
 }
 .navbar_entry {
@@ -528,17 +531,14 @@ div.category-content {
   width: 32%;
   margin-right: 0;
 }
-
 .panel-fifth {
   width: 19%;
   margin-right: 0.75%;
 }
-
-.panel-right-fifth{
+.panel-right-fifth {
   width: 19%;
   margin-right: 0;
 }
-
 div#central_content {
   margin: 0;
   padding: 0;
@@ -580,7 +580,7 @@ div#central_content {
 .footer_entry {
   font-size: 83%;
   margin: 0;
-  min-width: 16%;
+  min-width: 14%;
   padding: 0;
   text-align: center;
 }

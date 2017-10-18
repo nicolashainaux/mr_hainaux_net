@@ -60,6 +60,35 @@ function loadFile (event) {
       }
     }
   }
+  // console.log('Coucou !')
+  // Insert '|interactive' at the end of url if the interactive_or_printable
+  // radio button selects the interactive document
+  var selectorButtons = document.getElementsByName('interactive_or_printable_selector')
+  if (selectorButtons !== null) {
+    // console.log('Found selector!' + selectorButtons)
+    var suffix = ''
+    // console.log('Children are ' + selectorButtons.length)
+    for (var k = 0; k < selectorButtons.length; ++k) {
+      //   console.log('.tagName = ' + selectorButtons[k].tagName)
+      if (selectorButtons[k].tagName === 'INPUT') {
+        if (!selectorButtons[k].hasAttribute('value')) {
+          console.log('Found an <input> without value!')
+        } else {
+          //   console.log(selectorButtons[k].tagName + ': ' + selectorButtons[k].value + ' >>> ' + selectorButtons[k].checked)
+          if (selectorButtons[k].checked) {
+            suffix = selectorButtons[k].value
+            // console.log('Set suffix to "' + suffix + '"')
+          }
+        }
+      }
+    }
+    if (suffix !== '') {
+      var urlChunks = url.split('/')
+      urlChunks[2] = urlChunks[2] + suffix
+      url = urlChunks.join('/')
+      //   console.log('Set url to "' + url + '"')
+    }
+  }
   // Create a link object that will be used in fact to parse the url
   // in order to get the file name
   var parser = document.createElement('a')

@@ -1,5 +1,27 @@
 {% extends 'default.html' %}
 
+{% block interactive_or_printable %}
+<div class="panel panel-default" style="position: absolute; top: 0px; left: 0.5%; width: 15.2%; z-index: 10;">
+  <div class="panel-body" style="padding: 8px;">
+    <div>
+      <form id="interactive_or_printable_selector" style="text-align:left;" >
+        <div style="display: flex; flex-flow: row nowrap; justify-content: space-around;">
+            <div>Version <a href="/mode-d-emploi-pdf/">(*)</a>:</div>
+              <div>
+                <input class="radio-btn" type="radio" name="interactive_or_printable_selector" value="|interactive" style="vertical-align: middle; margin: 0px;" checked>
+                <img src="/static/pics/interactive_doc.svg" align="middle" alt="document pdf interactif" title="document pdf interactif" style="width:40px;height:40px;">
+              </div>
+              <div>
+                <input class="radio-btn" type="radio" name="interactive_or_printable_selector" value="" style="vertical-align: middle; margin: 0px;">
+                <img src="/static/pics/printer.svg" align="middle" alt="document pdf à imprimer" title="document pdf à imprimer" style="width:40px;height:40px;">
+              </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
 {% block leftmenu %}
 <section class="accordion">
   {% for belt_title, belt_tag, infos in leftmenu_data %}

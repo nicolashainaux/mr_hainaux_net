@@ -59,6 +59,7 @@
 
 {% block navigation %}
 <div class="col-md-12 navbar_row" role="navigation">
+  {% block interactive_or_printable %}{% endblock %}
   <ul class="nav nav-pills navbar_entries">
     {% for slug, link, entry, html_entry in navbar_data %}
       {% if active_category == entry %}
