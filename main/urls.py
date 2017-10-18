@@ -22,7 +22,7 @@ from pages import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^exercice/(?P<sheetname>[\w_-]+)/(?P<filename>[\w_-]+)/$',
+    url(r'^exercice/(?P<sheetname>[\w_-|]+)/(?P<filename>[\w_-]+)/$',
         views.sheet),
     url(r'^$', views.home),
     url(r'^(?P<category>[-\w]+)/$', views.build)
