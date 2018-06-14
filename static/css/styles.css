@@ -443,7 +443,8 @@ a.leftentry.cat_calcul-mental.active {
   border-bottom-right-radius: 0;
 }
 #aclabel-Ceinturejaune,
-#aclabel-Ceintureblanche {
+#aclabel-Ceintureblanche,
+#aclabel-Ceintureorange {
   margin-bottom: 2px;
 }
 .leftentry_belt {
@@ -461,6 +462,11 @@ a.leftentry.cat_calcul-mental[href$="2e-trait"] {
 .leftentry.Ceinturejaune.cat_calcul-mental {
   color: #fff;
   background-color: #ffd42a;
+}
+#aclabel-Ceintureorange,
+.leftentry.Ceintureorange.cat_calcul-mental {
+  color: #fff;
+  background-color: #ff7f2a;
 }
 #aclabel-Ceintureblanche,
 .leftentry.Ceintureblanche.cat_calcul-mental {
@@ -481,6 +487,14 @@ a.leftentry.cat_calcul-mental[href$="2e-trait"] {
 }
 #leftmenu_calcul-mental_ceinture-jaune-2e-trait {
   background: #ffd42a url("/static/pics/deux_traits_oranges.png") no-repeat;
+  background-position: 95% 5%;
+}
+#leftmenu_calcul-mental_ceinture-orange-1er-trait {
+  background: #ff7f2a url("/static/pics/un_trait_vert.png") no-repeat;
+  background-position: 95% 5%;
+}
+#leftmenu_calcul-mental_ceinture-orange-2e-trait {
+  background: #ff7f2a url("/static/pics/deux_traits_verts.png") no-repeat;
   background-position: 95% 5%;
 }
 .main {

@@ -70,6 +70,9 @@ function displayTiles (event) {
   } else if (this.classList.contains('Ceinturejaune')) {
     mc_navbar_entry.style.backgroundColor = '#ffd42a'
     mc_navbar_entry.style.color = 'white'
+} else if (this.classList.contains('Ceintureorange')) {
+    mc_navbar_entry.style.backgroundColor = '#ff7f2a'
+    mc_navbar_entry.style.color = 'white'
   }
 
   // console.log('dans displayTiles: ' + leftmenu_active_id)
