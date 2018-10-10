@@ -15,21 +15,18 @@ Including another URLconf
 """
 import socket
 
-from django.conf.urls import url
 from django.contrib import admin
+from django.urls import path
 
 from pages import views
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^exercice/(?P<sheetname>[\w_-|]+)/(?P<filename>[\w_-]+)/$',
-        views.sheet),
-    url(r'^$', views.home),
-    url(r'^(?P<category>[-\w]+)/$', views.build)
+    path('admin/', admin.site.urls),
+    path('exercice/<sheetname>/<filename>/', views.sheet),
+    path('<category>/', views.build),
+    path('', views.home)
 ] if socket.gethostname() in ['tepeyollotl', 'ometeotl'] \
-  else[
-    url(r'^exercice/(?P<sheetname>[\w_-|]+)/(?P<filename>[\w_-]+)/$',
-        views.sheet),
-    url(r'^$', views.home),
-    url(r'^(?P<category>[-\w]+)/$', views.build)
-]
+  else [path('exercice/<sheetname>/<filename>/', views.sheet),
+        path('<category>/', views.build),
+        path('', views.home)
+        ]
